@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract PaymentGateway {
-    address public owner; // Owner of the contract
-    mapping(address => uint256) public balances; // User balances
+    address public owner; 
+    mapping(address => uint256) public balances; 
 
     event PaymentReceived(address indexed from, uint256 amount);
 

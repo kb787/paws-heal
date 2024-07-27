@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
 const contractAddress = process.env.my_contract_address;
-const { PaymentGateway } = require("./../application");
+const { PaymentGateway } = require("../application");
 async function getContractInstance() {
   return await PaymentGateway.at(contractAddress);
 }
@@ -10,8 +10,11 @@ async function getContractInstance() {
 const handleDepositTransaction = async (req, res) => {
   try {
     const { account, amount } = req.body;
-    if (!account) {
-      return res.json({ message: "No such account found", status: 404 });
+    if (!account || !amount) {
+      return res.json({
+        message: "Entering account no and amount is mandatory",
+        status: 404,
+      });
     }
     const contract = await getContractInstance();
     const result = await contract.deposit({
@@ -32,8 +35,11 @@ const handleDepositTransaction = async (req, res) => {
 const handleWithdrawTransaction = async (req, res) => {
   try {
     const { account, amount } = req.body;
-    if (!account) {
-      return res.json({ message: "No such account found", status: 404 });
+    if (!account || !amount) {
+      return res.json({
+        message: "Entering account no and amount is mandatory",
+        status: 404,
+      });
     }
     const contract = await getContractInstance();
     const result = await contract.withdraw(web3.utils.toWei(amount, "ether"), {
@@ -53,6 +59,12 @@ const handleWithdrawTransaction = async (req, res) => {
 const handleViewBalance = async (req, res) => {
   try {
     const { address } = req.params;
+    if (!address) {
+      return res.json({
+        message: "Providing address details is mandatory",
+        status: 404,
+      });
+    }
     const contract = await getContractInstance();
     const balance = await contract.balances(address);
     res.json({ success: true, balance: web3.utils.fromWei(balance, "ether") });

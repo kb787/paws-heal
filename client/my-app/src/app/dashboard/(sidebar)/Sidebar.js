@@ -4,6 +4,7 @@ import {
   faRobot,
   faBuildingColumns,
   faHandshakeAngle,
+  faCircleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Sidebar = () => {
@@ -42,6 +43,15 @@ const Sidebar = () => {
             />
           </div>
           <p className="font-medium text-xl text-center">Volunteering</p>
+        </div>
+        <div className="flex flex-row gap-2 my-3 text-center items-center">
+          <div className="flex items-center justify-center bg-gray-50 border rounded-md py-3 px-3">
+            <FontAwesomeIcon
+              icon={faCircleExclamation}
+              className="text-xl font-medium"
+            />
+          </div>
+          <p className="font-medium text-xl text-center">Red Alert</p>
         </div>
       </div>
     </div>

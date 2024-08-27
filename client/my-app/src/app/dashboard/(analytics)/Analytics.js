@@ -41,7 +41,10 @@ const Analytics = () => {
   ];
   return (
     <div className="flex flex-row justify-start gap-[1%] my-[2%]">
-      <div className="flex flex-col bg-white py-6 rounded-md border h-[95%] w-[49%] justify-start items-start px-[2%]">
+      <div className="flex flex-col bg-white py-[3%] rounded-md border h-[99%] w-[49%] justify-start items-start px-[2%]">
+        <p className="text-3xl font-bold text-red-600 text-center">
+          Red Alert Species
+        </p>
         <div className="flex mx-[25%] items-center">
           <PieChart width={350} height={350}>
             <Pie
@@ -57,7 +60,10 @@ const Analytics = () => {
           </PieChart>
         </div>
         <div className="flex flex-col justify-start my-[0.35%] mb-4">
-          <div className="flex flex-row gap-[2%] justify-start">
+          <div className="text-2xl font-bold text-center text-red-800 my-[0.5%]">
+            Top 3 categories with maximum count
+          </div>
+          <div className="flex flex-row gap-[2%] justify-start mt-[2%]">
             <p className="text-custom-color-one font-light text-xl">
               Endangered:
             </p>
@@ -77,8 +83,16 @@ const Analytics = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-white rounded-md py-6 h-[95%] w-[50%] justify-center items-center px-[2%]">
+      <div className="flex flex-col bg-white rounded-md py-[3%] h-[99%] w-[50%] justify-center items-center px-[2%]">
         <LineChartComponent />
+        <div className="flex flex-col my-[3%]">
+          <p className="text-left text-2xl font-extrabold text-custom-color-two">
+            Recent trends in green list species count
+          </p>
+          <p className="text-left text-xl font-medium text-custom-color-two">
+            Analyzing data of last 60 years
+          </p>
+        </div>
       </div>
     </div>
   );

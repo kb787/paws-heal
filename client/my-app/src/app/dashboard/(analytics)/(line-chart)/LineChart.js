@@ -30,11 +30,15 @@ const LineChartComponent = () => {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+        <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" />
+        <XAxis dataKey="name" stroke="#ffffff" />
+        <YAxis stroke="#ffffff" />
+        <Tooltip
+          contentStyle={{ backgroundColor: "#333", border: "none" }}
+          labelStyle={{ color: "#ffffff" }}
+          itemStyle={{ color: "#ffffff" }}
+        />
+        <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={2} />
       </LineChart>
     </ResponsiveContainer>
   );

@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Scatter,
 } from "recharts";
 import { useState } from "react";
 
@@ -100,6 +101,25 @@ const getChartData = (duration, species) => {
     return vulnerableTwenty;
   }
 };
+const CustomizedLabel = (props) => {
+  const { x, y, value } = props;
+  return (
+    <text x={x} y={y} dy={-10} fill="#ffffff" fontSize={10} textAnchor="middle">
+      {value}
+    </text>
+  );
+};
+
+const CustomizedScatter = (props) => {
+  const { cx, cy, payload } = props;
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={4} fill="#ffffff" />
+      <CustomizedLabel x={cx} y={cy} value={payload.pv} />
+    </g>
+  );
+};
+
 const LineChartComponent = () => {
   const [selectedInterval, setSelectedInterval] = useState("60");
   const [selectedSpeciesType, setSelectedSpeciesType] = useState("green-list");
@@ -123,7 +143,15 @@ const LineChartComponent = () => {
             labelStyle={{ color: "#ffffff" }}
             itemStyle={{ color: "#ffffff" }}
           />
-          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={2} />
+          <Line
+            type="monotone"
+            dataKey="pv"
+            stroke="#ffffff"
+            strokeWidth={2}
+            dot={false}
+          />
+          <Scatter dataKey="pv" shape={<CustomizedScatter />} />
+          {/* <Scatter dataKey="pv" fill="#ffffff" /> */}
         </LineChart>
       </ResponsiveContainer>
       <div className="flex items-center gap-[5%] w-full my-[6%]">

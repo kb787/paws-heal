@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +31,7 @@ const Header = () => {
         .then((res) => {
           console.log(res.data);
           setTotalCount(res.data.count);
-          alert("Count Details fetched successfully");
+          // alert("Count Details fetched successfully");
         })
         .catch((err) => {
           console.log(err);
@@ -58,7 +59,7 @@ const Header = () => {
           );
           setGreenStatusData(res.data.assessments);
           setGreenStatusAnimalCount(res.data.assessments.length);
-          alert("Green species details fetched successfully");
+          // alert("Green species details fetched successfully");
         })
         .catch((err) => {
           console.log(err);
@@ -83,7 +84,7 @@ const Header = () => {
           setExtinctData(res.data);
           setEndangeredHeadersData(res.headers);
           setExtinctStatusAnimalCount(res.data.assessments.length);
-          alert("Extinct species details fetched successfully");
+          // alert("Extinct species details fetched successfully");
         })
         .catch((err) => {
           console.log(err);

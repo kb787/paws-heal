@@ -1,3 +1,4 @@
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartSimple,
@@ -48,7 +49,7 @@ const Sidebar = () => {
             Volunteering
           </p>
         </div>
-        <div className="flex flex-row gap-2 my-3 text-center items-center">
+        {/* <div className="flex flex-row gap-2 my-3 text-center items-center">
           <div className="flex items-center justify-center bg-gray-50 border rounded-md py-3 px-3">
             <FontAwesomeIcon
               icon={faCircleExclamation}
@@ -58,7 +59,7 @@ const Sidebar = () => {
           <p className="font-medium text-sm text-center text-white">
             Red Alert
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

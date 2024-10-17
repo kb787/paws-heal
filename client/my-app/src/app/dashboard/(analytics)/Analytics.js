@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, Label } from "recharts";
 import LineChartComponent from "./(line-chart)/LineChart";

@@ -1,3 +1,4 @@
+"use client";
 import Header from "../(header)/Header";
 import Analytics from "../(analytics)/Analytics";
 import Footer from "../(footer)/Footer";

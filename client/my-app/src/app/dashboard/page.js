@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Content from "./(content)/Content";
-import Sidebar from "./(sidebar)/Sidebar";
+import dynamic from "next/dynamic";
+const Content = dynamic(() => import("./(content)/Content"), { ssr: false });
+const Sidebar = dynamic(() => import("./(sidebar)/Sidebar"), { ssr: false });
+
 export default function Main() {
   return (
     <div className="w-full min-h-screen bg-[#221F3B] py-[0.80%] px-[0.50%]">

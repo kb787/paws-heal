@@ -1,0 +1,34 @@
+1.24: hi I'm Ashe I'll be talking about how to
+4.2: go about fine tuning Shuka using the
+6.48: seram stack Shuka fine tuning allows us
+9.44: to take what we have in the text real
+11.88: and add audio modality to it here we
+15.08: Show an example of a booking appointment
+17.199: use case we synthetically generated
+19.8: roughly 5,000 charts in English and
+22.24: finetune Lama 3 using it next using our
+26.16: translate TTS and audio generation model
+29.359: we convert text into multilingual audios
+32.16: and find tune our base Shuka model using
+34.239: it let's see how it performs on the use
+36.879: case let us test the model in Hindi
+53.12: first as you can see the model responded
+55.96: correctly by recommending a
+57.92: pulmonologist
+68.92: great let's try something else
+86.4: now great as you can see it identified
+89.56: Dr Amit correctly as well now my friend
+92.479: hasid will demo this in
+95.56: Bengali hi I'm hasit and today I'll be
+98.479: testing the multilingual capabilities of
+100.64: the fine tun Shuka model in Bengali so
+104.119: let's
+114.96: start so as you can see it's able to
+119.119: understand the mention of
+120.719: child's chest pain and hence suggested a
+123.079: pediatrician at the Children
+125.24: Hospital uh let's continue the
+134.56: conversation so suggest a 10: a.m.
+138.84: appointment H
+143.16: bookin so as you can see the Shuka model
+145.76: is quite capable in Bengali thank you

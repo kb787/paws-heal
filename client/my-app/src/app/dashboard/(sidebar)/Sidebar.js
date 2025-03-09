@@ -48,7 +48,7 @@ const Sidebar = () => {
             />
           </div>
           <p className="font-medium text-sm text-center text-white">
-            Volunteering
+          <Link href="/volunteering">Volunteering</Link>
           </p>
         </div>
       </div>

@@ -1,2 +1,10 @@
 node_modules/
 .env
+
+
+# voice dependencies
+voice-wf/frontend/livekit-nextjs-voice-agent-interface/node_modules/
+voice-wf/frontend/livekit-nextjs-voice-agent-interface/.env
+voice-wf/frontend/livekit-nextjs-voice-agent-interface/.cache
+
+

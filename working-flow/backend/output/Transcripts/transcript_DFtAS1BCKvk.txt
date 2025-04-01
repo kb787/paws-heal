@@ -1,0 +1,149 @@
+2.679: hi I am moit and I'll be giving you a
+4.48: short demo of suram 2B a 2 billion
+6.359: parameter model which we have trained
+7.839: from scratch in this demo I'll be
+9.76: comparing its performance with B Lama
+11.4: 3.1 8 billion since this is a pre-end
+13.96: model it cannot follow instructions but
+15.879: just do completions let's get started
+17.88: with a simple Hindi completion so I'll
+20.48: paste my prompt which
+23.8: says which means three Freedom Fighters
+26.32: before India's independence are
+30.199: okay what I'll do is I'll paste this in
+32.119: Google Translate so that everyone can
+34.559: understand so suram Tob says Mahatma
+37.239: Gandhi B ganga and La after India's
+40.559: independence in 1947 many Indians worked
+42.6: hard to unite their country this eff was
+44.48: led by J N who was the first Prime
+46.039: Minister of India that time okay so it
+48.52: has given three Freedom Fighter names
+49.84: and has went into some details that took
+51.44: place after Independence it looks like
+53.0: that okay let's face the same PRP in
+55.48: Lama
+62.719: so Lama says ramachandra GHA New Delhi
+65.36: senior leader of BH J party and former
+67.36: Union Minister ramachandra GHA said that
+70.119: three there were three Freedom Fighters
+72.04: in India before independence he said
+75.24: this okay it has not given the three
+78.32: Freedom Fighter names but has went into
+80.2: some news article things
+82.56: okay H one more thing I want to show is
+86.079: Lama has printed almost like 10 12 lines
+88.759: and it has used 5 12 tokens while servum
+92.079: Tob has printed around similar amount of
+94.32: TXS but it has used only 278 tokens that
+97.119: is like almost half the tokens but same
+98.88: amount of words this is because serum 2B
+101.119: has much more efficient tokenizer in
+102.72: Indian languages than Lama moving on
+105.52: let's try an example in Tamil so I what
+109.399: I'll do is I'll translate my prompt in
+111.92: Tamil and the prompt says significant
+115.159: differences between the architecture of
+116.68: cholas and pandas one so basically
+119.24: prompting the to give me
+123.479: markdown I will have to paste this in
+125.6: Google
+126.6: Translate There You Go says
+129.36: architectural style the cholas
+131.08: architecture mostly focused on religious
+132.76: structur such as temples and palaces
+134.519: which were Grand and onet a
+136.44: characteristic of Chola architecture is
+138.04: that it is decorated with increate
+139.959: carvings and elaborate carvings P's pan
+143.36: architecture was generally seen more in
+145.0: cities and settlements than in temples
+146.48: or palaces the design probably correct
+149.599: and the text is quite coherent the
+151.44: English sounds much much good okay let's
+154.44: give the same from to
+157.68: Lama okay it has moved away from Tamil
+160.76: script and started English it says Chas
+164.159: and were two most power both had
+166.04: significant okay the cholas tool over a
+168.76: vast Empire that stretched from Tamil
+170.44: Nadu to parts of Andra
+173.239: Pradesh okay here is our answer which we
+175.519: were looking for maybe one notable
+177.4: difference between two dynasties was
+178.64: their architectural styles
+180.48: Stone pillars cut columns yeah not a
+183.04: very good job I'll prefer the output of
+185.879: servant to be over the Lama moving on to
+188.879: next test of the model what I'll do now
+191.0: is I'll give a paragraph and ask the
+193.2: model to summarize so this paragraph
+195.239: talks about an activity where a general
+197.48: where a British general asked its Army
+199.4: to openly fire on the people who were
+201.68: protesting against a rolet
+204.48: act and I'll give this in
+207.319: Punjabi and ask the model to summ in
+210.08: three
+211.56: points
+213.2: Punjabi okay here is our paragraph and
+215.439: then I'm asking to summarize in three
+217.28: points let's see what Sur Tob can do
+220.64: okay it has given three
+223.04: points on April 1399 the am Mas get to
+226.08: place this happened after large laak it
+228.64: included the gka and sik infantry
+231.64: regiments of the British okay not a very
+234.0: good job but pretty
+235.599: decent let's try with Lama 3.1
+244.0: okay yeah it has hallucinated to give
+246.4: some article L articles which detail
+248.72: about
+250.519: master yeah quite bad compared to Sur to
+253.48: be okay now what I'll do is I'll give a
+256.359: code and we'll ask the model to explain
+258.359: in Tel so this code is basically talking
+261.639: about factorial program in recursive and
+265.36: what I want the model to do is explain
+267.32: me in Tamil uh sorry
+273.28: so explain in Telo my expectation is
+275.52: some explanation should come in Telo
+277.759: okay something has
+281.36: come in this program we first Define a
+283.639: function called factorial which takes an
+285.0: integer NS parameter this function uses
+287.199: recursion to calculate the factorial the
+288.88: base case is base case is when n is z or
+291.36: one in which case the function returns
+294.16: one or one respectively otherwise it
+295.68: calls itself recursive call and
+297.16: multiplies the result by the current
+298.32: number yeah sounds correct for a
+300.24: vectorial function let's see what Lama
+302.759: gives
+304.4: out okay recursive function base case
+308.24: recursive case yeah it neither sounds
+311.44: coherent in telu probably and even the
+313.919: English looks like
+315.919: broken let's try another task in OA what
+319.28: I'll do is I've given few shot for
+321.96: translation here is an English sentence
+324.28: and here is an AIA
+327.0: sentence and this is its translation so
+330.16: my expectation from this is uh the model
+332.199: should output the translation of this
+333.4: sentence the first AR that Harry Potter
+335.88: destroyed was Tom Riddle's
+337.639: Diary okay I'll translate this back to
+340.72: English the first H that Harry Potter
+343.28: broke was Tom rid diary perfect let's
+345.919: see what Lama can
+350.24: do uh it has hallucinated a bit but
+353.319: let's see what this is probably wrong
+355.0: okay Harry Potter something something so
+357.72: this demo clearly shows the reasoning
+359.199: and understand understanding skills of
+360.36: this model in Indian culture history and
+362.0: languages it it it has easily
+364.68: outperformed the best open source model
+366.599: out there yeah

@@ -1,0 +1,69 @@
+0.96: hi I'm Rahul and I'll be giving you a
+3.32: quick demo of our Shuka model which
+5.6: directly takes in audio as input and
+8.28: tries to generate a response in English
+11.04: um so let me ask the first question
+14.759: now
+19.68: bubble as you can see it U understood my
+22.439: question and has started um answering
+25.76: quite quickly if you noticed so this is
+28.119: the main advantage of audio language
+30.84: models they uh don't need an
+33.44: intermediate speech recognition step
+35.559: which makes the turnaround time much
+38.44: faster
+40.039: so the answer is quite detailed um it
+46.0: goes through the iterations and so on
+48.6: okay looks quite good uh let me Pro it a
+51.28: bit
+52.239: further is algorithm python Implement
+58.719: please okay okay uh now it goes on to
+61.76: write
+62.68: code
+65.6: and uh okay it's also giving us example
+70.479: usage and some explanation of what the
+73.439: code does and so on okay um we can also
+76.88: see the conversation history here uh
+80.64: which is helpful because we can better
+83.04: understand what the context to the model
+85.56: is and so
+86.84: on uh which might come in handy right so
+89.96: so let us now ask another question but
+93.28: uh in a different language right to see
+95.439: if it can handle multiple languages in a
+97.56: single
+99.96: conversation algorithm C++ rewrite
+107.56: please okay it seems to have understood
+109.88: and is proceeding to rewrite the
+112.399: code
+114.36: um yeah this can be quite powerful since
+117.119: it removes much of the pre-processing we
+119.28: need to do um for voice interfaces right
+123.039: like language identification Etc before
+126.52: uh we pass the inputs to the language
+129.319: model okay so it looks
+132.64: like it has uh Rewritten it correctly so
+136.959: let's move on uh to ask a question in
+141.04: English this
+143.0: time can you make this code
+147.92: recursive okay
+150.72: so it goes on to do that so uh another
+153.8: advantage of this model uh and our
+156.04: approach in general is that we only
+158.56: finetune a small portion of this whole
+160.8: network right so we do not touch the
+163.2: language model specific weights which
+165.44: means that we can easily swap uh the
+168.28: language model out to a a stronger model
+171.76: in the future right so okay it seems to
+175.44: have finished and finally let me ask um
+179.36: about the the complexity of this
+182.2: algorithm either complexity analysis
+189.319: please okay it's giving some details
+191.959: about the space complexity time
+195.2: complexity and so on which is
+198.319: good and yeah looks okay all right so
+203.36: that was Shuka our uh new open- source
+206.44: audio LM which can understand 10 index
+209.2: languages and is available for you to
+211.319: try out on hugging face thank you

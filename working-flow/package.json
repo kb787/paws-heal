@@ -1,0 +1,43 @@
+{
+  "name": "siva-ai-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-spring/web": "^9.7.5",
+    "autoprefixer": "^10.4.17",
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^11.0.3",
+    "gsap": "^3.12.5",
+    "html-webpack-plugin": "^5.6.3",
+    "lucide-react": "^0.468.0",
+    "postcss": "^8.4.33",
+    "process": "^0.11.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.5.3",
+    "react-particles": "^2.12.2",
+    "react-router-dom": "^7.0.2",
+    "siva-ai-website": "file:",
+    "tailwindcss": "^3.4.1",
+    "tsparticles-slim": "^2.12.0",
+    "typed.js": "^2.1.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@vitejs/plugin-react": "^4.2.1",
+    "babel-loader": "^9.2.1",
+    "vite": "^5.0.12"
+  }
+}

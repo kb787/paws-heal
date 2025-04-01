@@ -1,0 +1,845 @@
+0.69: [Music]
+5.16: hello skaut my name is Dad welcome to
+7.319: another inside
+12.36: episode the flying drones existing
+15.08: logistic
+22.279: indry so let me introdu to our guest
+25.48: speaker of the day
+27.279: mran
+28.96: Dr cross so let's begin hi good morning
+33.079: namaskar
+34.12: everyone uh good to have you all
+36.84: here uh just wanted to take a few
+39.16: minutes maybe to share some things that
+41.6: uh would become very relevant for us
+44.64: very
+45.68: soon let's start
+50.0: here let's start by first asking
+52.84: ourselves what exactly is a drone
+55.16: because a lot of people out there keep
+57.44: talking about drones and all the
+58.96: miraculous and Magic magical things that
+60.68: they are doing with drones but uh
+63.96: honestly there there really isn't much
+66.439: Clarity in terms of uh what exactly is
+69.759: the Drone so let's try and figure that
+71.759: out first so let's take a look at this
+74.68: for
+76.72: example if you were to look at this some
+80.0: of these maybe you will realize yes is
+82.68: very clearly a drone for example yes but
+86.4: what if someone was to tell you that no
+89.2: this is actually also a
+91.72: drone or so is this or is this a
+96.04: drone so how do you define a
+101.84: drawn while you're doing that you will
+104.079: also be thrown with terms like Radio
+106.56: control aircraft remotely piloted
+108.84: aircraft all kinds of big terminology
+112.32: out
+113.159: there as a
+115.24: result it's it's it's become kind of
+117.799: confusing for all of us to try and
+119.28: figure out what exactly is a drone so
+121.52: let's try and see what a drone is and
+124.399: for that we'll probably go back to what
+126.759: the dgca tells
+128.84: us what a drone is now what is
+132.0: dgca dgca is actually the regulatory
+135.599: Authority for all kinds of civil
+138.0: aviation in
+139.72: India now that civil aviation includes
+143.599: drones and what dgca tells you is that
+147.76: drone means unmanned aircraft system
+152.36: what this specifically mean is that if
+154.2: you have a
+155.239: system which is basically
+157.76: unmaned it's an aircraft and it's being
+160.959: remotely
+162.159: controlled now here's the key thing out
+164.4: here it should be remotely controlled
+167.92: wirelessly then it's a
+170.04: drone nowhere do they tell you that your
+172.8: drone needs to have punas on top or
+174.8: propellers on top or in the front or
+176.599: bottom nowhere do they tell you that
+178.8: your drone needs to look like like this
+180.239: or that or whatever the simple
+182.519: definition of drone is if it flies in
+185.4: the air if it's remotely controlled if
+189.04: it's remotely controlled wirelessly and
+190.84: there's nobody sitting out there on the
+192.599: aircraft it's a drone simple as that so
+196.72: the key terms that we talking about over
+198.599: here is there has to be some unmanned
+202.0: aerial vehicle plus a remote station or
+205.4: a remote
+206.599: control okay that unman aial thing is
+211.08: also sometimes referred to as remotely
+213.72: piloted vehicle or remotely piloted
+218.08: aircraft and having having seen this if
+222.04: you try and come back to this and try
+223.56: and figure out what exactly is a
+226.64: drone a radio control boat is obviously
+229.319: not a drone because it's not
+231.599: aerial a hexacopter that is basically
+235.36: what you and me have typically known as
+237.64: drones with six propellers on top
+240.239: is a drone a Diwali balloon is obviously
+243.92: not a drone
+245.28: because it's not remotely
+248.159: controlled here's the interesting one a
+250.439: radio control toy helicopter the kind
+252.519: you get on Amazon or flip card or
+255.04: whatever else it is an aerial vehicle it
+258.16: is unmanned and it is wirelessly remote
+260.359: controlled so according to dgca yes that
+263.919: is a
+265.44: drone then you have these big military
+267.68: aircraft the ones made by drd and very
+271.08: often used by the US definitely a drone
+275.039: a typical radio control toy aircraft the
+277.36: Chinese ones that you get in the market
+279.44: again on Amazon or wherever else if you
+282.08: notice yes it's
+284.0: aial it's unmanned and it's wirelessly
+287.32: remote controlled it is therefore a
+291.56: drone coming to air taxis interestingly
+294.8: no they are not drones simple reason
+297.24: they are not unmined you have somebody
+298.88: sitting out there on the machine
+300.88: therefore they are not classified as
+303.88: drones then you have these agre machines
+306.32: the ones that we use for agricultural
+308.0: spraying definitely a drone then you
+310.919: have these small toy gliders toy planes
+313.28: that children throw around yes they are
+315.88: aial they are unmanned but they are not
+318.16: remotely controlled so they are not
+320.44: drones Diwali rocket yes of course it's
+323.8: aial it's unmaned but not controlled so
+327.199: not a drone RC toy car
+330.0: kind of
+331.24: obvious so that's what we mean when we
+334.28: say a
+336.56: drone interestingly again if you go back
+339.12: and look at it nowhere did we talk about
+341.36: a drone having propellers on top or
+343.28: front or bottom or whatever else or the
+345.68: shape and size or weight of a
+349.08: draw coming to now what what all things
+353.36: do we use drones for because typically
+355.8: again when we talk about drones we have
+357.6: this mental picture of you know was a
+359.88: huge machine with multiple arms
+361.759: propellers on top maybe doing pizar
+365.44: delivery or
+366.72: whatever interestingly there's a lot lot
+369.599: more that drones are currently
+371.88: doing and will do in the future let's
+375.16: take a quick look at some of these
+376.4: examples out here that we have a quick
+380.0: video aial photography is obviously the
+382.52: first one that we're going to talk about
+384.759: take a
+388.4: look
+390.53: [Music]
+426.8: all the different shape that you're
+428.12: looking
+430.28: [Music]
+448.319: at
+452.84: [Music]
+472.199: dring on drone
+473.58: [Music]
+478.319: delivery
+482.53: [Music]
+507.43: [Applause]
+509.91: [Music]
+517.7: [Music]
+557.079: the last one obviously is the one that
+558.959: we most frequently talk about hear about
+562.32: the military using machines to bomb
+565.92: places any yeah having seen what what
+569.36: all stuff that drones can be used for uh
+574.519: maybe I think it's important to kind of
+576.68: realize that right now if you're looking
+579.959: at what 30 40 different
+581.88: applications there's a new one being
+583.76: created every single day limited only by
+588.32: the imagination of what you can do with
+590.36: this
+592.079: machine but before you go down that
+594.279: route I mean where you start talking
+595.92: about using drones for real life
+597.519: applications and what you can do with it
+599.68: I think it's very important to
+600.92: understand the regulations that uh
+603.32: govern the current usage of drones and
+606.72: how these impact us how these enable us
+611.24: to do things also at the same
+615.519: time I not go into the detail
+617.72: regulations but there are important
+619.519: things out there that each one of us
+621.079: needs to know irrespective of whether we
+623.72: currently
+624.959: use or have a drone or not because even
+628.279: if you're planning to buy buy a toy
+629.64: drone some of these things will impact
+632.8: you very quickly so let's get into
+636.0: it where do you first of all find the
+639.32: regulations uh the government of India
+642.16: has set up something called the digital
+643.6: Sky portal which is run by the dgca you
+647.32: might want to kind of preserve these
+648.72: URLs out
+651.24: there this is where the latest drone
+653.399: rules are
+654.8: available at the same time they keep
+657.0: making changes addendums notifications
+660.04: whatever else which sometimes go out on
+662.56: that Ministry of civil aviation website
+665.24: or the dgca website itself or sometimes
+669.279: the government being the government they
+671.639: might put it out as a pib release pib
+673.639: release is nothing but a standard
+675.519: government circular which goes out on
+677.56: the central government website out
+680.04: there so important to note down
+683.76: these again remember the government will
+686.279: not come and tell you that these are the
+687.72: rules these are not the rules or they
+689.6: will not send you a text message saying
+691.68: hey we change the rule out here you need
+694.44: to go to these websites follow the
+697.04: Publications and try and figure out what
+699.279: is the latest thing that's happening out
+701.0: there and make sure that you follow
+706.48: it the first thing when we talk
+709.519: about the the regulations is what all do
+713.16: these regulations apply to they apply to
+715.079: all kinds of drones all kinds of people
+718.279: who own
+719.48: operate Lee repair do whatever with
+723.12: drones so it's not like you can
+725.639: say drone
+727.92: photography rules don't apply to me no
+730.44: so it doesn't work that way if you have
+733.12: a drone if you're operating it whether
+734.8: you borrowed it what whatever the rules
+737.36: apply to
+739.12: you and it doesn't matter whether your
+741.839: machine is what 50 g or 200 g or
+744.519: whatever anything from0 gr to 500 kg you
+749.04: are covered under the Drone rules simple
+750.72: as
+752.72: that you will be Exempted from the Drone
+756.6: rules obviously if you work for the
+759.92: military which most of us don't so we'll
+763.0: skip that
+765.44: part uh maybe we'll come back to this
+768.72: later on let's talk about the
+770.8: interesting thing that that a lot of the
+772.88: media guys keep pushing on us and try
+774.68: and figure out what exactly do they mean
+777.399: by the classification of Dr drones and
+780.56: you will keep hearing these terms like
+782.24: Nano micro small
+785.6: whatever basically when the dgca came up
+788.199: with these drone rules they split the
+791.76: the drones into various weight
+795.56: categories honestly if you look at these
+798.839: terms Nano micro small medium large
+803.199: okay these are more
+805.88: for the kind of payload and the total
+808.88: weight that the machine
+812.48: carries most of us would be stuck maybe
+815.48: from between Nano to small kind of
+818.279: category because beyond that becomes
+821.199: really Advanced heavy important thing to
+824.8: note out here is when when dgca talks
+827.12: about the weight here they're talking
+829.399: about the total total total weight of
+832.199: your drone so you can't have a drone
+834.88: which says let's say weighs 2 kgs and
+838.0: can carry 500 G on top of that and you
+840.0: say boss my drone weighs 2 kgs
+842.44: no dgca will include the weight of the
+846.12: payload when they try to classify
+849.8: this interestingly in the Drone rules
+852.88: 2021 which is the last latest version we
+855.279: are working
+856.839: with we created a new subcategory called
+860.44: mrpa Model remotely piloted
+863.72: aircraft which could be all the way from
+865.88: 1 gr
+867.68: to 25
+871.32: G this subclassification or subcategory
+874.6: specifically meant for
+876.199: drones which are not meant for
+878.839: commercial
+880.04: use so let's say today out you go out
+882.759: there and buy yourself a drone which
+884.8: you're using for your own personal
+886.36: photography
+887.959: needs or maybe uh you want to drop drop
+891.12: flower petals on your de one or whatever
+894.8: as long as you're not using it
+896.72: commercially it would get classified as
+899.48: mrpa the interesting thing about mrpa is
+902.68: that the kind of restrictions or
+905.36: regulations that apply to it are
+907.48: slightly less constructive compared to
+911.079: commercial
+913.279: draws the most important restriction
+915.759: though however is that no
+918.079: mrpa can be flown Beyond visual line of
+921.32: sight that means whenever you're flying
+923.199: it you should be able to see it with
+925.199: your Naked
+926.48: Eyes okay
+930.959: now to try and understand better and how
+933.839: these rules apply to
+935.639: us simple way of remembering the whole
+938.04: thing is ask
+940.12: yourself what are you
+942.839: flying why are you
+945.12: flying and where are you flying because
+947.959: all these three things are relevant for
+950.04: you let's start with the B
+953.839: BD the rules are very
+956.88: clear every drone that you have you
+960.639: operate you own you do whatever with has
+963.68: to be
+965.72: registered
+968.72: okay in reality
+971.24: though when you try to register a drone
+973.8: let's say which weighs 100 gram or
+975.279: anything less than 250 g they currently
+978.48: do not have that option enabled although
+981.639: on the rules on paper it very clearly
+983.68: says yes it needs to be
+987.16: registered what that basically means is
+989.36: that if you go to Amazon or whatever and
+991.199: buy your kid or yourself one of these
+993.36: toy
+996.759: drones you will need to register
+1000.399: it coming back
+1002.839: to the the regulations we spoke
+1006.639: about what are we
+1008.759: flying obviously if you're flying
+1013.199: mrpa which is basically education
+1016.319: research
+1017.48: design personal use
+1021.04: okay you don't need to have a pilot
+1023.839: license you don't need a type
+1028.079: certificate the next question to ask
+1030.799: therefore is why am I
+1032.919: flying and this is where I just
+1036.28: mentioned if you are flying
+1038.919: commercially now what do they mean by
+1040.919: commercial so let's say you have a
+1043.679: drone you take it to your friend's
+1045.799: wedding start doing photography out
+1047.799: there and charge them for it it becomes
+1051.08: commercial
+1052.799: okay the moment you start flying
+1055.2: commercial the rules are very clear you
+1058.64: need to have a pilot
+1061.08: license simple as
+1064.44: that for which you will need to undergo
+1068.039: a formal training
+1069.76: course appear for the
+1072.88: exam and then bgca will issue you
+1077.4: a
+1082.6: so just to summarize the whole thing out
+1090.44: here if you look at this
+1093.84: again up to 25 kgs if you're not flying
+1097.32: commercially
+1099.6: mrpa okay okay uh so again coming back
+1103.44: to like uh the classification that we
+1105.799: were talking
+1107.32: about
+1109.08: the rules are very simple if you're
+1111.4: flying
+1112.52: commercially you need to have a pilot
+1115.96: license simple as
+1117.64: that and for that the process like I was
+1120.159: saying
+1121.24: earlier is you will need to undergo a
+1123.559: formal training
+1125.559: course you will need to give a written
+1127.72: exam flying exam and then the dgca
+1130.84: issues you what what they call a pilot's
+1136.0: license if you're not flying commercial
+1138.52: if you're flying only for your personal
+1140.76: needs no license required provided
+1145.4: provided your drone is less than 25
+1149.679: kgs okay and if it's less than 2 kgs you
+1153.96: don't even need a type certificate type
+1155.76: certificate is nothing but uh a
+1158.039: certification from the government saying
+1159.76: that your machine is legal to fly in the
+1162.2: Indian a
+1164.799: space having seen
+1167.24: this here's the part which is extremely
+1170.559: extremely important for all of us
+1173.0: irrespective of whether you're flying
+1174.919: commercially non-commercially whether
+1177.4: you're flying n Nano micro
+1181.44: small the government has basically split
+1184.32: the whole country into three
+1188.72: zones and the rules for these zones are
+1191.0: very
+1191.799: simple if it's a Red Zone you're not
+1195.559: allowed to fly period it doesn't matter
+1199.64: whether you have a small toy drone small
+1202.96: RC helicopter or whatever if you're in
+1205.919: the Red Zone government says you are not
+1209.679: allowed to
+1211.64: fly then there are these massive yellow
+1215.799: zones where yes you allowed to fly but
+1219.52: you will need permission prior
+1221.72: permission from the local air traffic
+1225.24: controller so let's say you're flying
+1227.4: somewhere around
+1228.96: nask uh most of nask zone for example is
+1231.96: a yellow zone you will need to go and
+1235.2: approach the air traffic controller out
+1237.64: there take permission and then you can
+1240.039: fly realistically it doesn't
+1243.159: happen so if you really break it down
+1246.52: red and yellow zones are basically noo
+1248.36: zones for
+1249.32: you which leaves a huge part of the
+1251.84: country which is actually a green zone
+1255.08: where you allowed to fly without any
+1257.12: kind of Prior permission
+1258.679: you're allowed to fly commercially
+1260.64: you're allowed to fly Nano micro small
+1263.799: whatever else you
+1265.52: have and where do you go and find these
+1268.64: zones on the digital Sky portal if you
+1271.36: go there and look at it very
+1274.039: carefully there's a zoomable map given
+1276.52: out
+1277.88: there you can zoom into any part of the
+1280.4: country that you want your current
+1282.08: location for
+1284.08: example and you'll know whether it's a
+1286.12: red yellow or green
+1290.039: interestingly if you look at the
+1292.72: map most urban
+1295.679: areas are red zones so whether you look
+1298.24: at Delhi Bombay Kolkata Bangalore all
+1303.08: red
+1305.36: zones and this is extremely important
+1308.919: because flying in a Red Zone if you are
+1312.84: caught they'll put all kinds
+1315.72: of whatever Indian police
+1318.559: regulations they have on you and put you
+1320.2: behind
+1321.12: bars
+1324.72: okay so again just to kind of summarize
+1327.96: a red zone is no go unless you have
+1331.76: prior permission from the central
+1332.919: government which you and me are not
+1335.76: getting yellow if you have permission
+1338.2: from the local air traffic controller
+1340.4: which again you and me normally don't
+1343.159: get so normal human beings whether they
+1346.64: are flying commercially or not
+1348.6: commercially need to be playing in the
+1352.159: green
+1354.2: zone again within the green zone they
+1356.6: put certain height restrictions which
+1358.24: actually don't matter because 400 ft is
+1361.279: normally high enough for us to you and
+1363.559: me
+1365.24: fly it's enough for us to do things the
+1368.64: only restriction that applies in a green
+1370.72: zone though is your drone should again
+1373.6: be within visual line of sight which
+1377.279: means you should be able to see it with
+1378.6: the naked
+1380.96: eye that regulation is currently being
+1384.96: enhanced so maybe that might be taken
+1387.039: off very soon in the near future because
+1390.0: uh it's very relevant when you're
+1391.44: talking about drone deliveries or
+1392.799: whatever
+1393.679: else that your drone might actually need
+1396.2: to fly beyond your line of s but the
+1399.32: rules keep getting enhanced modified as
+1403.44: time goes by so hopefully that will come
+1405.679: into place very soon
+1410.72: talking about drone delivery
+1412.64: specifically here's what the government
+1414.679: actually put out way back in July
+1419.24: 2022 they made it very clear that they
+1421.679: don't have a problem with drone
+1424.0: deliveries so they actually put out a
+1426.36: pib circular a notification out there
+1429.12: which says private players can use
+1430.919: drones for drone delivery in accordance
+1433.799: with the Drone rules of 2021 which is
+1436.039: what we just spoke about
+1439.4: so going forward yes the government is
+1442.039: trying to encourage new areas of drone
+1444.88: applications they are very much in favor
+1446.88: of doing interesting things with
+1448.96: drones is just that the rules and the
+1452.96: technology will need a little bit of
+1455.48: more time to kind of align themselves
+1458.88: and for things to start happening on the
+1464.32: ground let's talk a little bit more
+1466.6: about Brad delivery specifically because
+1469.48: this is actually a huge interest
+1474.12: area why do we need drone delivery I
+1476.399: mean why why on Earth could anybody even
+1478.919: border about drone delivery very simple
+1481.44: one it's faster it's more efficient more
+1484.039: cost cost savings are
+1485.96: there of course your customer has an
+1488.96: enhanced
+1490.88: experience I I mean actually I've just
+1492.84: listed down a few points here but you
+1495.2: can actually list down a whole number of
+1496.96: things on why delivery through drones
+1499.919: makes a lot of
+1502.399: sense of course there are doubt
+1505.2: sides some people will lose jobs I mean
+1507.6: so typically if you have a guy sitting
+1508.919: on a bicycle going from one place to
+1511.2: another a drone will obviously be better
+1513.48: than
+1514.559: him there are obviously privacy and
+1516.88: security concerns I mean people have
+1519.159: problems with drones flying all over the
+1520.72: planet all over the buildings but these
+1523.64: are things I think that that come with
+1525.399: any new
+1526.36: technology and not too much of a concern
+1528.72: area for us right
+1533.08: now getting into more detail about drone
+1536.679: delivery let's say we we want to start
+1539.12: drone delivery doesn't matter what it is
+1541.039: whether it's pizzas or maybe you want to
+1543.559: deliver uh Parcels or whatever
+1546.799: else again start with basic simple
+1549.6: questions what do you want to deliver
+1552.52: when you want to deliver because this
+1554.52: will decide the process that you follow
+1557.0: the kind of drones that you use the kind
+1559.2: of Regulation that will apply to you
+1561.279: everything else let's look at for
+1563.799: example what do you want to
+1566.679: deliver technically it could be
+1569.32: anything
+1571.039: medicines emergency supplies spare parts
+1574.559: I mean for example Volkswagen right now
+1576.399: is already uh delivering parts from one
+1580.159: manufacturing plant to another using
+1584.039: drones of course you might have heard
+1586.2: about Amazon talking big about
+1588.52: delivery through
+1589.96: drones Walmart is doing it right now in
+1592.44: the US so you and all of course they
+1595.919: have big
+1597.279: plans but again in the US food delivery
+1600.159: is already happening through drones
+1602.64: technically there's no no no limit to
+1604.6: what you can
+1605.919: deliver the reason it's important to you
+1608.679: is you need to look at the weight of
+1611.48: what you want to deliver the volume the
+1614.32: total box size
+1616.6: or
+1618.96: dimensions of what you want to carry
+1620.559: because that will determine the size of
+1622.48: your
+1624.2: drone the last thing that you might want
+1626.24: to look at is survivability basically
+1628.2: like there are things that you can for
+1630.44: example pick up through a drone and drop
+1632.0: from the
+1633.08: air there are things that you will need
+1635.159: to pick up on a drone and actually land
+1637.36: to be able to drop
+1639.399: it that becomes very relevant when
+1641.679: you're talking about drone
+1644.039: deliveries and we'll talk about this uh
+1647.159: in a more detail very
+1649.96: soon where do you want to
+1653.559: deliver right now in India like I
+1657.2: said the most important thing to look at
+1659.559: is Are you delivering within line of
+1662.0: sight or Beyond line of
+1664.919: sight right now the rules do not allow
+1668.159: Beyond line of sight they are working
+1670.32: towards it it will
+1673.48: happen
+1675.039: but it's something very relevant for us
+1678.6: right
+1679.84: now second
+1681.84: thing whether you're flying in urban
+1684.12: area rural area
+1686.08: whatever again the rules will change
+1688.76: your flight environment will
+1691.48: change you need to look at the kind of
+1693.6: weather that you'll be flying in I mean
+1696.0: you can't fly let's say from a place
+1697.76: like
+1698.96: Bombay and if you're going offshore the
+1701.399: weather might be totally different out
+1703.0: there and then the security area it's a
+1706.64: high security highrisk area you might
+1709.039: not be able to land your drone so that
+1710.84: becomes very relevant and what kind of
+1712.72: drones do we use for
+1715.799: delivery there are three basic
+1718.72: types the first being fixed Wing where
+1721.519: you have a simple aircraft looking like
+1724.919: thing which flies in the air typically
+1728.0: these do not
+1730.159: land they just drop your payload from
+1732.64: the air and fly
+1734.679: back the payload comes down using a par
+1737.36: parachute or similar
+1741.559: mechanism very commonly used in the US
+1744.32: right
+1745.08: now very commonly used in Africa by a
+1747.88: company called zipline right
+1753.36: now then you have these hybrid
+1756.36: machines which have wings and propellers
+1759.32: or rotors whatever you want to call
+1762.2: them these things can take off
+1764.48: vertically they can land vertically
+1768.72: but they are extremely efficient because
+1770.399: for horizontal flight
+1773.24: cruising they have wings so they can
+1776.08: cover a huge amount of
+1778.32: distance and basically try and take
+1780.559: advantage of you know carrying good
+1783.64: payloads long
+1786.519: distances the third type which is the
+1788.88: most common one that the media keeps
+1790.48: talking
+1791.72: about is the so-called standard drone
+1794.48: that
+1795.279: un uh kind of always visualize typical
+1799.6: machine with rotors on
+1801.919: top can take off vertically land
+1806.039: vertically unfortunately these machines
+1808.399: because of the design cannot go very far
+1811.88: so the range is
+1814.32: limited and in terms of safety these are
+1817.919: comparatively low safety machines
+1819.799: because those propellers that are
+1821.799: spinning up there can be extremely
+1823.519: dangerous especially when you're trying
+1825.44: to drop the payload or land to drop the
+1831.32: payload in terms of the
+1834.679: usage hybrid machines are right now the
+1837.64: most commonly used
+1839.919: machines for
+1845.88: delivery talking about the typical
+1850.039: process very simple approach one simple
+1852.679: approach could
+1853.84: be you basically pick up a load fly
+1858.44: land and then you drop the load or
+1860.6: somebody takes out the load from your
+1862.679: drone and then you go back to your point
+1865.519: of
+1866.919: origin you would typically use this kind
+1869.32: of process of mechanism where you have
+1871.76: sensitive loads let's say for example
+1873.559: you're trying to deliver human organs or
+1876.88: something uh fragile
+1879.88: Parts this is the kind of process that
+1882.039: you would typically follow you would
+1885.44: need people at both ends obviously
+1887.88: to load unload whatever
+1890.399: else and given the fact that you're
+1892.6: landing and then taking off again going
+1894.96: back you might need to refuel at the
+1898.36: drop
+1899.799: point the other commonly used mechanism
+1902.48: is you don't
+1904.48: land you pick up the payload you fly in
+1907.039: the air and do an air drop through a
+1909.12: parachute or a tethered line or whatever
+1912.519: else and then just you fly back again
+1915.84: this is used very commonly for for
+1917.279: medical emergency
+1918.639: deliveries very commonly used by zipline
+1921.12: in Africa for example right now to drop
+1924.76: vaccines medicines everything
+1928.159: else you get much longer range with this
+1930.799: kind of process but obviously we can't
+1933.12: handle sensitive
+1936.6: loads so that's how it works very
+1942.159: simple here are the big guys out there
+1944.44: in terms of drone delivery interestingly
+1946.799: you notice any swiy or Amazon out
+1949.679: here zipline is the one that I I keep
+1952.519: talking about which the whole world
+1954.48: knows the reason I'm I'm putting these
+1956.799: up here is so that you get an idea of
+1958.36: the kind of load that they carry and the
+1960.08: kind of distance that they already
+1962.48: covering for drone deliveries look at
+1965.159: zipline for example they already doing
+1968.48: deliveries over a range of 24 miles
+1971.32: that's
+1972.159: huge again UPS in the US is doing
+1977.12: delivery for third Parties By the way
+1979.6: they are right now delivering human
+1982.159: organs from One hospital to
+1985.399: another the range that they're talking
+1987.44: about is typically 20 miles Mana again
+1990.36: which is based out of Ireland they have
+1992.36: their own custom design machines 10
+1995.039: miles so tech technology wise we are
+1997.96: very much there people are already doing
+2000.799: it coming to India maybe maybe the
+2003.36: regulations need to catch up a bit and
+2005.559: maybe a little bit of more effort is
+2008.32: required from our side to make things
+2011.2: happen out
+2013.76: here so what are the challenges we face
+2016.279: in India
+2017.32: specifically regulations honestly are
+2020.639: one big
+2022.36: bottleneck right now like I said the
+2024.559: government does not allow bvs Beyond
+2027.679: visual line of sight which is actually a
+2029.84: big
+2030.88: hindrance
+2032.919: two we don't have enough skilled
+2035.96: Manpower in a country of let's say what
+2039.08: 1.4 billion we are right
+2041.88: now if the government says boss for
+2044.24: drone deliveries you need
+2046.44: certified drone Pilots we have just less
+2050.159: than 10,000 of them out
+2052.2: there you don't have enough manpower to
+2054.76: kind of really have drone deliveries
+2057.32: take off in a big
+2060.28: way very sadly again there are no Indian
+2064.399: design or Indian made drones which are
+2067.2: reliable enough for drone deliveries
+2070.159: people are working in that direction
+2072.32: things will
+2076.079: change other big concern and this is one
+2078.679: of the biggest things that I think you
+2080.079: and we need to kind of start thinking
+2081.96: about is Safety and Security I mean one
+2085.48: classic example that I keep giving to
+2087.119: people is boss today we live in a
+2089.0: country where you can't leave your
+2090.919: bloody slippers outside the Mand yeah
+2093.48: you can't leave your bicycle
+2095.24: unlocked so if you really want drone
+2097.28: deliveries to take off I mean are you
+2098.76: expecting me to send up a machine which
+2100.28: is costing what six lakhs seven lakhs
+2102.96: and then having somebody sitting on the
+2104.28: Terrace bullet down it's something that
+2106.68: we need to talk about and then think
+2108.24: about if we want our country to
+2112.44: progress on the other hand again given
+2116.56: the cheap labor that is available in our
+2120.96: country there's obviously cheap
+2123.079: Alternatives available somebody might
+2124.88: sitting on sitting on a motorbike might
+2126.4: say
+2130.599: and there goes your whole business case
+2132.4: study use case study for a drone
+2133.8: delivery goes out of the
+2135.839: window but yes I mean I do see this
+2138.56: happening because there are use cases
+2142.48: where none of these would actually
+2144.64: matter and the only option left with you
+2146.4: might be use a
+2149.56: draw uh in real life during the co
+2155.119: pandemic the government is itself was
+2157.4: actually delivering vaccines to remote
+2159.079: areas using
+2161.119: drones so yes has to be done needs to be
+2164.839: done and will be done very
+2169.319: soon what does the future look like for
+2171.56: all of
+2172.839: us costs are obviously going to reduce
+2175.119: even further technology like I said is
+2178.2: already
+2180.52: there the use cases are limited only by
+2183.8: our
+2184.68: imagination the kind of students IDE
+2186.76: deal with for example keep coming up
+2188.24: with new ideas every day on what they
+2189.8: want to do with
+2191.2: drones and obviously needless to say
+2194.0: customer expectations are increasing
+2196.56: right now for example vanta wines wants
+2198.76: to use drones
+2200.24: for delivering stuff across their mines
+2203.599: they also want to use the use the same
+2205.56: drones for surveying the mines and
+2208.76: figuring out what's happening so people
+2211.68: are coming up with ideas expectations
+2213.48: are increasing and the industry will
+2215.88: have to deliver
+2220.359: quick question answers I mean some
+2223.319: common questions that are typically
+2225.72: encounter how far can drone fly I've
+2229.04: given you some
+2231.079: examples technically the bigger the
+2234.04: battery the more fuel you have the
+2236.48: longer you can
+2237.72: fly but there is obviously plate where
+2241.599: you need to kind of balance out that if
+2244.68: I have a big battery my weight increases
+2246.68: therefore I can't fly too
+2248.56: far but as you must have seen in the US
+2252.2: they're already doing 20 mi 30 mil piece
+2254.44: of
+2255.8: cake how much weight can the machine
+2258.2: carry basically depends on the
+2261.44: design when we typically design these
+2263.88: drones what we typically aim for is that
+2265.92: 25% of the weight total takeoff weight
+2269.44: should be reserved for the payload so if
+2271.28: I have uh let's say a machine which has
+2274.2: a takeoff weight of 1 kilo you you can
+2276.8: say that it'll have a payload of around
+2278.28: 250
+2281.079: g interestingly people again ask this
+2283.72: question very often that if I need to
+2286.119: get into drone delivery drone operations
+2288.119: or whatever else do I need I type
+2291.2: Engineers bchs or whatever else simple
+2294.119: answer is
+2296.4: no there are people out there who are
+2298.839: willing to
+2299.92: learn quite a bit of talent available
+2302.64: out there we need to train them bring
+2304.359: them up to the mark and it can be done
+2307.72: so that's about it I would like to end
+2310.0: the session here thank you very much all
+2312.44: of
+2313.359: you
+2315.0: namaskar
+2316.72: Mayim malakar from s
+2333.319: Assam drone
+2335.52: flying
+2365.44: drone
+2393.92: landology or
+2421.28: 2022
+2425.359: LIC
+2455.319: St
+2485.24: in
+2509.4: phy phph
+2515.24: coin
+2533.12: [Music]
+2545.16: designer
+2548.05: [Music]

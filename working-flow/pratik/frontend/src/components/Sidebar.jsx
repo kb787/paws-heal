@@ -1,13 +1,14 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Book, Database } from 'lucide-react';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Book, Database, ChartNetwork } from "lucide-react";
 
 const Sidebar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Knowledge Base', href: '/', icon: Book },
-    { name: 'Data Management', href: '/data-management', icon: Database },
+    { name: "Knowledge Base", href: "/", icon: Book },
+    { name: "Data Management", href: "/data-management", icon: Database },
+    { name: "Dashboard", href: "/dashboard", icon: ChartNetwork },
   ];
 
   return (
@@ -34,4 +35,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-

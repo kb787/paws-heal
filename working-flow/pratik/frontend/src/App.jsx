@@ -1,8 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import KnowledgeBase from './pages/KnowledgeBase';
-import DataManagement from './pages/DataManagement';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import KnowledgeBase from "./pages/KnowledgeBase";
+import DataManagement from "./pages/DataManagement";
+import Content from "../components/dashboard/content/Content";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<KnowledgeBase />} />
             <Route path="/data-management" element={<DataManagement />} />
+            <Route path="/dashboard" element={<Content />} />
           </Routes>
         </main>
       </div>
@@ -21,4 +23,3 @@ function App() {
 }
 
 export default App;
-

@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SparkleEffect from '../components/SparkleEffect';
+import ChatBox from '../components/ChatBox';
+import CodeTyping from '../components/CodeTyping';
+import TypedHeading from '../components/TypedHeading';
+import FeatureCard from '../components/FeatureCard';
+import ProcessSteps from '../components/ProcessSteps';
+import PricingSection from '../components/PricingSection';
+---
+
+<Layout title="SiVA.ai - Enterprise AI Solution">
+  <SparkleEffect client:load />
+  <Header />
+  
+  <main class="bg-dark min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-dark via-purple-900/20 to-dark animate-gradient"></div>
+      <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <TypedHeading client:load />
+          <p class="text-xl text-gray-300 mb-8">
+            Redefining how employees interact with enterprise resources through advanced AI technology.
+          </p>
+        </div>
+        <div class="flex-1">
+          <ChatBox client:load />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-white text-center mb-16">Innovative Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <FeatureCard
+            client:load
+            title="Context-Aware Responses"
+            description="Smart responses based on context"
+            detailedDescription="Employs sophisticated algorithms to deliver context-aware responses that go beyond mere keyword matching, leveraging RAG and Graph-RAG technologies."
+            icon="🧠"
+          />
+          <FeatureCard
+            client:load
+            title="Predictive Analytics"
+            description="Anticipate future needs and trends"
+            detailedDescription="Analyzes historical data and user interactions to anticipate future needs, delivering insights before issues arise."
+            icon="📊"
+          />
+          <FeatureCard
+            client:load
+            title="Workflow Automation"
+            description="Streamline business processes"
+            detailedDescription="Revolutionizes organizational efficiency through intelligent workflow automation, identifying and optimizing repetitive tasks."
+            icon="⚡"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-dark/50">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-white text-center mb-16">How SiVA.AI Processes Your Questions</h2>
+        <ProcessSteps client:load />
+      </div>
+    </section>
+
+    <!-- Code Demo Section -->
+    <section id="demo" class="py-20">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-4xl font-bold text-white text-center mb-16">See SiVA.ai in Action</h2>
+        <CodeTyping client:load />
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <PricingSection client:load />
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .cursor-effect {
+    pointer-events: none;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid theme(colors.neon-purple);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+  }
+
+  .spark {
+    pointer-events: none;
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: theme(colors.neon-purple);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: spark 1s linear forwards;
+  }
+
+  @keyframes spark {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

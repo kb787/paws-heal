@@ -1,0 +1,437 @@
+6.799: hello uh in this video we will
+8.88: demonstrate a model fine-tuned over the
+11.32: base model that we open sourced as part
+13.519: of the open hati effort uh the open hati
+16.32: series is a is meant to be an series of
+19.52: Open Source contributions in models and
+21.68: data sets for Indian language AI
+24.039: specifically focusing on generative AI
+26.679: uh it's a collaboration between suram
+28.48: and our academic partner AI for bat
+31.32: which contributed language resources and
+34.12: also independently benchmarked the model
+36.32: we really hope that the ecosystem can
+38.2: take what we have shared in fact we have
+39.76: shared a very detailed technical blog of
+41.64: what we have done and the ecosystem is
+43.84: able to replicate it innovate on top uh
+46.48: and take things further we at suram are
+48.6: also going to be training at much larger
+50.719: scales uh and releasing them as part of
+53.96: our platform which will launch soon but
+56.0: we wanted to share the excitement and
+57.559: show you what is possible today
+60.8: um I can go here and I can type
+62.519: something like write an essay in Hindi
+66.24: about the natural beauty and diversity
+70.84: of India right um and now it starts
+74.4: generating a response in Hindi um it is
+77.92: uh talking about um the the vegetation
+82.56: uh it is talking about uh the animals
+85.64: here um it is talking about uh um maybe
+91.119: the Landscapes here and it's also
+93.28: talking about the rivers and lakes um
+97.28: and ends with a conclusion uh about what
+99.68: it is um notice here that there are some
+102.0: statistics on the bottom it for example
+103.799: tells you that we have generated this
+105.64: with about 254 tokens uh but if I were
+108.96: to copy this now uh and paste it in the
+112.36: GPT tokenizer uh interface which is a
+115.479: tokenizer that is used both in gbt 3.5
+117.719: and 4 models then you will find that the
+119.88: number of tokens here is much much
+121.719: larger right and this is p primarily
+123.88: because as you see here the Indian
+125.6: language characters are not modeled and
+128.0: the model is falling back on Unicode
+130.08: which sometimes consumes more than one
+132.16: token per character um and if I do the
+134.959: same thing for the Llama
+138.0: tokenizer as well uh you should
+141.08: see uh the number of tokens is much
+144.08: larger in fact in fact larger than even
+146.16: the um the open AI tokenizer so what we
+149.48: have done by adding a new set of tokens
+152.68: in the base llama model we have made
+154.879: both the representation of input in
+156.76: Hindi and the generated output in Hindi
+159.68: much more efficient and as you know
+161.48: number of tokens affects the latency but
+164.08: also affects the cost of inferencing so
+166.2: this is one critical advantage of
+168.319: customizing an existing model for a new
+170.92: language in this case Hindi let me do
+172.92: something a bit more common place let me
+174.72: say write in Hindi uh the recipe of
+179.0: parak paneer
+182.2: so uh it now says that it's a popular
+184.84: dish uh it gives me the
+187.4: ingredients
+189.04: um and it gives some
+196.4: instructions yeah so that looks like a
+198.84: reasonable answer in some cases um the
+201.519: model having seen so much more text uh
+204.44: in English might be able to perform
+206.56: better when generating the response in
+208.159: English but we may need the the answer
+210.56: in Hindi so one way to do that is to
+213.92: think in English and then respond in
+215.76: Hindi so I'll show you an example of
+217.799: this so if I said write a conversation
+220.56: between Harry Potter and Hanuman right
+224.64: this is what these models have capable
+226.08: of helping us with and they both discuss
+229.2: devotion
+232.879: Hanuman shares some deep Insight let us
+236.56: say uh based on his devotion
+240.319: to Lord RAM and Harry connects to his
+244.72: love for his parents and here is the
+247.36: critical thing if I just left it like
+248.68: this it'll generate an answer in English
+250.599: but I can say first write in English and
+254.879: then translate to Hindi the model will
+257.6: now follow this instruction it's first
+259.079: answering in English it's writing a
+261.0: dialogue we are greeting each other then
+263.24: Hanuman says I want to talk about
+264.759: devotion Harry Potter says sure Hanan
+267.08: says devotion is a deep and pure love
+268.72: towards something someone or something
+270.32: it involves selfless service and
+271.8: complete surrender to the object of
+273.199: one's devotion uh can you give an
+275.759: example uh Lord Ram was my Guru and I de
+279.28: and I devoted myself entirely to him I
+281.28: served him with all my heart and soul
+283.0: without any expectation of reward this
+284.44: kind of devotion is called bti and Harry
+286.88: Potter says wow um and uh it goes on
+290.72: right um so my my parents said my gurus
+293.32: is what Harry Potter says and that's
+295.039: wonderful love and sacrifice are indeed
+296.8: the sense of devotion um and um and
+300.479: notice here Harry Potter said in the
+302.039: past tense which which shows that the
+303.919: model knows that his parents are not
+305.8: around so it's an interesting
+306.96: conversation and look at this it now
+308.52: starts translating to Hindi uh and it
+311.08: writes now the same uh it does a good
+313.28: job of translating whatever is there in
+315.12: this part of the English output into
+316.84: Hindi this is when the fact that the
+319.28: English model has seen so much text
+321.479: perhaps lot of discussions about Harry
+323.12: Potter's story uh it's able to inherit
+325.639: that and write this kind of a
+326.759: conversation and the model is now able
+328.639: to generate that so in Hindi it's
+330.44: completed again it's about 569 tokens
+333.039: though this is a very long output I can
+335.0: copy this again and maybe go to the
+337.56: llama tokenizer in this case paste it
+339.759: and we see that there are far more
+341.52: number of tokens uh if you generated
+343.68: this even if you were to throw away the
+345.52: English which is an attempt at uh Chain
+348.08: of Thought thinking in some sense by us
+349.96: if you were to delete that uh and just
+352.28: look at the Hindi output if you just
+353.639: generated this in Hindi it would be even
+355.84: then far more number of tokens than what
+357.96: we are generating in both the languages
+360.319: right so this is an example of
+362.319: generating text in Hindi and when
+364.639: required also generating in English and
+366.96: and taking the advantage of the
+368.36: efficient tokenizer uh to be very
+370.4: efficient at doing
+372.44: that now let's look at some examples
+374.759: where there is some context coming from
+376.72: an external source which uh can come
+378.919: from templates like rag for example
+380.599: retrieval augmented generation where
+382.56: semantic search is done or maybe there
+384.759: is some context of a user profile or a
+386.759: particular content that the user is
+388.4: interacting with and that is available
+390.56: in the conversations context uh so I
+393.199: have opened a few such examples this is
+394.759: for example the uh website of ncrt which
+397.96: contains the uh books for various uh
+401.319: standards and for various uh subjects I
+403.919: can take uh maybe this until here okay I
+407.919: can copy this entire thing here and I
+411.039: can paste it here and then say answer uh
+414.72: the
+415.479: following based on the above context
+419.039: right and I'm going to look quickly in
+421.599: this this talks about constellations uh
+423.8: notice I want to do this cross lingually
+425.479: though the English content is available
+427.28: in the context which is often the case
+428.919: there's lot more content in English and
+430.759: semantic search is also very efficient
+432.52: and accurate but I might want to
+434.039: interact cross lingually with it so I
+435.599: might want to say
+438.039: constellation and notice I'm using the
+440.36: romanized form of typing which is very
+442.16: common in India when using a query
+443.879: keyboard like on the laptop I'm using
+445.599: now but also on mobile phones and the
+447.84: model says constellation is group of
+449.68: stars that form patterns in the sky um
+452.72: and this is what this particular
+454.4: document is also saying uh this also has
+457.919: something about uh planets and how the
+460.72: atmology of planets comes from let me
+463.16: let me showcase doing this with uh with
+465.479: Hindi text so let me just open Google
+467.36: translate um and say what is the origin
+471.36: of the word planet um
+474.639: and so it should understand words like
+477.84: so I can copy that I can paste it here
+480.44: and it continues the conversational
+481.96: context and it says correctly the word
+483.599: planet comes from the Greek word Plante
+485.72: which means Wanderers so we feel this is
+487.599: very important the ability for people to
+489.879: uh ask questions cross lingually and
+491.8: finally if I ask also in English if I
+493.599: said what does the passage say about the
+497.599: weight of the Moon this is an example
+499.599: where the passage does not have
+501.319: information it had something about moons
+503.159: at the bottom but notice that it's very
+505.479: very uh limited um and it does not of
+509.08: course talk about weights so one of the
+510.759: important aspects about grounding the
+512.959: answer on a given context is to be able
+515.039: to not answer it if the information is
+516.8: not there which is what we have trained
+518.519: the model to do so this is one example
+520.8: this is in the educational context which
+522.36: we think will be very useful in uh in
+524.2: India's context uh but let's take one
+526.279: more I have opened here a website of
+528.2: vikaspedia which is which contains
+530.2: various government related uh documents
+532.76: for example this is something about the
+534.32: rights of power consumers in the country
+536.72: uh so I can copy this whole thing
+540.16: uh pretty long document uh and often
+543.2: these are kinds of things that people
+544.56: find very hard to read uh and understand
+547.399: so I can again say uh answer the
+550.959: following based on the above context and
+555.079: I can ask for example this is this is
+557.64: about electricity so let's say I asked
+559.68: it in romanized form mu uh connection
+566.839: close to policy
+572.36: right so what does the policy say if I
+573.839: want to close my connection the policy
+575.959: states that in in the case consumer
+578.24: desires that his meter to be permanently
+580.04: described he should apply for the same
+581.32: to the distribution lensey and the lense
+583.32: he shall arrange for a special meter
+584.72: reading and prepare a final bill the
+587.12: disconnection shall be done immediately
+588.72: after payment of the final bill right so
+590.519: first of all notice that it sort of
+592.279: connects to my question I asked what
+593.959: does the policy say and the policy
+595.68: states is how the play begins and it
+597.64: grounds the answer based on what is
+599.24: there u i can little bit try one more
+601.959: example uh I could say senior
+606.12: citizens
+608.8: policy what does it say about senior
+610.88: citizen it states that the distribution
+612.36: licenses should provide all services
+614.0: such as application submission payment
+615.68: of bills Etc to senior citizens at their
+618.12: doorsteps right so we have policies like
+620.12: this which uh provide benefits for
+622.04: sections of society and making that
+624.24: accessible uh to people is is useful and
+627.24: let me do one more maybe I can again try
+630.079: this translation approach I can say uh
+633.0: what are the facilities for making a
+636.92: complaint and let me ask you to respond
+638.839: in Hindi this time right so respond in
+640.6: Hindi because it's been responding in
+642.839: English uh but you may say this I can
+645.92: paste it here and it
+651.399: says
+655.76: cgf right so there is some kind of for
+659.32: where people can uh can can can do some
+662.12: grievance redressal I suppose right so
+663.92: this is this is what it answers a
+665.36: question also in Hindi let's do one more
+668.04: this time taking a slightly different
+669.839: domain so this is the bletchly
+671.12: Declaration that was done very recently
+673.079: in the AI safety Summit it's a very long
+675.32: piece of text so I can copy this whole
+677.68: piece of text uh it's a maybe until here
+681.399: uh and I can create a new conversation
+684.16: and here let us say instead of asking
+686.04: questions right which is probably one
+687.959: way of doing it but I'm just say uh
+691.36: summarize the above uh in Hindi uh in
+695.0: bullet points right um and in this case
+698.279: it's a complex and long piece of text
+700.8: but now uh I'm able to generate uh more
+704.839: suent and also itemized view in Hindi
+708.44: let's just read one of them AI man of
+711.44: Kalan Shanti or
+716.959: Sam presents an opportunity
+719.56: to create uh humanitarian good peace and
+723.04: prosperity and so on so notice that such
+725.079: a big piece of text was compressed into
+728.079: into much shorter more accessible uh
+730.959: text like this so we believe that this
+732.6: will form a key usage pattern of these
+735.279: models where content is available at
+737.8: scale with diversity in English but
+739.88: people would like to cross lingually
+741.88: access
+743.36: it let's talk about translation which
+745.76: has been a very important part of Indian
+748.079: language AI because enables much more
+749.92: content to be accessible by more people
+751.959: so if I open something like the
+753.519: Wikipedia page for India and I take the
+755.76: first paragraph um and I paste it here
+759.0: and I say translate the above to Hindi
+763.8: um now it goes ahead and it translates
+766.36: this uh notice that it is making some
+769.04: interesting choices here it says India
+770.68: officially the Republic of India
+775.16: India and then it retains this bracket
+777.839: which gives the IO ISO variant of
+781.16: Republic of India as it is right um and
+784.279: it also does not trip when it sees
+785.92: things like citations which tends to
+787.44: affect some of the older generation
+788.88: domain specific models in fact it adds a
+791.16: space to make it more readable and
+793.36: generally does a very good job of
+794.8: translation we have compared on
+796.16: benchmarks with state-of-the-art models
+798.279: and on English to Hindi Direction which
+800.279: is this one uh we are we are matching
+802.88: the state-of-the-art systems uh plus
+804.72: there are some additional advantages
+806.12: like what we discussed but this is for
+808.24: Fairly simp simple text but often text
+810.0: can also be more complex one source of
+811.8: complex test test is of course
+814.68: scientific documents here I have the GPD
+816.399: for technical report open and if you
+818.36: take a sentence like this one right uh
+820.839: which talks about GPT beating other
+823.959: large language models um and there are
+826.44: some complex phrases there so I can
+828.6: again do this and say translate the
+832.68: above to Hindi um and in this case it
+836.16: says paric NLP Benchmark KX s
+849.839: GP it uses an interesting
+853.0: phrase for for for out performs that
+856.16: maybe one could change that but roughly
+857.959: this is how literal translation would
+859.88: work it maintains context it maintains
+862.199: things within the brackets and so on but
+864.12: let us say if you wanted to do
+865.399: differently if you wanted to make this
+866.92: context more accessible to people so
+869.12: instead of saying translate the above to
+870.56: Hindi I could say translate the
+874.16: above literally to
+876.959: Hindi analyze with the
+879.839: complexity and then simplify it right U
+883.639: so it provides a literal translation gp4
+886.36: paric NLP Benchmark sweet this is
+888.6: similar to what it did but of course it
+890.279: use
+891.759: now that's a bit of a better phrasing uh
+895.279: and now it is trying to analyze what it
+897.04: can simplify about it and they like that
+899.04: things like NLP Benchmark
+900.32: state-ofthe-art system should be
+901.68: simplified and let's see what it did uh
+904.12: firstly notice that it used gp4 in
+909.32: much in using
+919.279: it engineering
+922.0: cation there so I I would prefer as an
+924.36: individual to read a a translation that
+926.759: looks like this and there might be
+928.12: applications of this not just in
+929.6: technical content uh but other sources
+931.959: like legal content maybe medical Jon and
+934.44: so on and we genuinely believe that if
+936.68: you use large language models the notion
+939.0: of what translation is which is to make
+941.12: information accessible to people uh
+943.199: could change um I could also of course
+945.959: uh show other directions uh one of the
+948.24: important things is we have built the
+949.839: ability to translate from romanized form
+952.199: of Hindi to English uh so for example I
+954.88: could say translate uh the following to
+958.16: English and I can write a romanized
+960.399: thing um let us say something let in a
+962.759: customer care kind of a setting I could
+964.44: say mea
+966.959: parcel myel is not not arrived
+973.93: [Music]
+977.079: yet order
+981.24: cancel with a full refund right this is
+983.839: the kind of thing that people would
+985.199: write uh it's it's code mixed it's it's
+987.6: romanized but now the translation is
+989.88: very very good my parcel has not arrived
+992.199: full stop I have been waiting for a long
+993.8: time comma and now want to cancel my
+995.88: order with full refund notice that I I
+998.319: was of course quote mixing here and all
+1000.0: that uh Works quite well you can also of
+1002.959: course do translation from Hindi to
+1005.04: English so I have taken this uh recent
+1007.6: news from uh daily hunt news channel uh
+1010.88: I can take maybe the first sentence of
+1013.04: this and I can
+1015.6: say translate the f following to English
+1020.839: and paste
+1026.64: this B so it says the international
+1030.12: price of crude oil has remained almost
+1032.0: flat today right so it does a good job
+1034.559: of translating one interesting thing
+1036.319: about this is that if I were to copy
+1037.919: this uh even if the input had some
+1041.039: errors right let us say I removed the
+1042.959: space here uh I removed the space here
+1046.36: these are of course not correct uh words
+1049.24: um and maybe a space here maybe a space
+1052.2: one just one last one and and um still
+1055.64: the model understands it right um it is
+1058.44: uh this this is again the benefit of
+1060.16: using a large language model which U
+1062.6: understands things more generally than a
+1064.2: domain specific model uh it is able to
+1067.52: tokenize it and even if there are errors
+1069.12: in the tokenization able to translate it
+1071.08: and this might be useful when let us say
+1072.799: trying to digitize content from
+1074.6: documents where OCR sometimes misses
+1077.0: spaces uh but we would like to still
+1079.039: analyze it so this concludes our
+1080.76: presentation we have showed you
+1081.96: different ways in which this model is
+1083.48: useful again we would we look forward to
+1085.6: Innovation on top of this base model uh
+1087.76: and we look forward to people using
+1089.2: these models on the serone platform

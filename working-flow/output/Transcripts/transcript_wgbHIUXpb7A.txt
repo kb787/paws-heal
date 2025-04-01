@@ -1,0 +1,63 @@
+0.24: hello and welcome to skogo super app
+2.48: demo
+3.199: my name is mohit shrishta and i'm a
+5.12: senior product engineer
+6.399: at skogo in this video demo i'll walk
+9.12: you through the steps to create a new
+10.8: account on skogo's super app
+12.88: now before we start the demo let's
+15.12: quickly go over to the introduction part
+17.119: skogo super app is a cloud-based user
+19.68: and customer support software
+21.279: that makes it easier for companies to
+23.76: request
+24.32: on-demand id field support engineers
+27.119: anytime
+27.92: anywhere across india super app also
+31.119: enables companies to provide a simple
+33.04: and digital support experience to their
+34.8: users
+35.36: and customers without further ado let's
+38.399: start the first time account setup
+39.92: process
+40.879: to create your superapp account open
+43.2: your browser and type
+44.64: https superapp.google.net and hit
+48.16: enter next click on the sign up button
+51.039: to create your new account
+52.8: now enter your mobile number next
+55.92: read and accept the terms and conditions
+58.399: and click submit
+59.68: to verify your mobile number please
+61.84: enter the otp
+62.879: that you have received on the mobile
+64.479: number entered in the last step
+66.4: and click verify otp in this section
+69.439: will require your basic details to set
+71.6: up your account
+72.88: enter your first name last name and
+75.28: official company email address to
+76.96: register
+77.84: for document type please provide either
+80.24: gst
+81.119: or pan card number of your company for
+83.68: this video
+84.32: i'll be using pan card document type now
+87.52: enter your company name company address
+90.32: street name
+91.28: and finally the company pan card number
+94.0: you can upload the logo of your company
+95.84: in the required dimensions
+97.2: otherwise you can skip this by default
+99.92: skogo super app creates your company
+101.84: branded domain name for you
+103.36: if you like to change the domain name
+105.119: you can edit it and change it
+107.439: finally click finish setup button
+110.399: congratulations
+111.52: you have successfully created your
+113.04: company's account on skogo super app
+115.28: in order to watch other videos in this
+117.2: series click the link in the description
+119.28: box below
+121.04: thanks for watching

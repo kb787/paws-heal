@@ -11,6 +11,7 @@ from livekit.agents import (
     metrics,
 )
 from livekit.agents.pipeline import VoicePipelineAgent
+from services.openai import Openai
 from livekit.plugins import (
     cartesia,
     openai,
@@ -21,7 +22,7 @@ from livekit.plugins import (
 )
 
 
-load_dotenv(dotenv_path=".env.local")
+load_dotenv(dotenv_path="../.env")
 logger = logging.getLogger("voice-agent")
 
 
@@ -50,10 +51,12 @@ async def entrypoint(ctx: JobContext):
     # Other great providers exist like Cerebras, ElevenLabs, Groq, Play.ht, Rime, and more
     # Learn more and pick the best one for your app:
     # https://docs.livekit.io/agents/plugins
+
+    openai = Openai()
     agent = VoicePipelineAgent(
         vad=ctx.proc.userdata["vad"],
         stt=deepgram.STT(),
-        llm=openai.LLM(model="gpt-4o-mini"),
+        llm=openai.llm,
         tts=deepgram.TTS(),
         # use LiveKit's transformer-based turn detector
         turn_detector=turn_detector.EOUModel(),

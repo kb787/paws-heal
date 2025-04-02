@@ -8,3 +8,4 @@ livekit-plugins-turn-detector>=0.4.3,<1.0.0
 # optional, only if background voice & noise cancellation is needed
 livekit-plugins-noise-cancellation>=0.2.0,<1.0.0
 python-dotenv~=1.0
+litellm>=1.12.0

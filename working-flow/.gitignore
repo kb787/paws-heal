@@ -4,6 +4,11 @@ __pycache__/
 *$py.class
 *.so
 .Python
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+.pytest_cache/
+pytest_cache/
 env/
 build/
 develop-eggs/

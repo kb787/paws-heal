@@ -4,11 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-**/__pycache__/
-**/*.py[cod]
-**/*$py.class
-.pytest_cache/
-pytest_cache/
 env/
 build/
 develop-eggs/
@@ -101,5 +96,11 @@ htmlcov/
 voice-wf/frontend/livekit-nextjs-voice-agent-interface/node_modules/
 voice-wf/frontend/livekit-nextjs-voice-agent-interface/.env
 voice-wf/frontend/livekit-nextjs-voice-agent-interface/.cache
+
+
+youtube_transcript_loader.log
+
+application.log
+
 
 

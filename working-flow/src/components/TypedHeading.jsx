@@ -7,9 +7,9 @@ export default function TypedHeading() {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        'Transform Your Enterprise with SiVA.ai',
-        'Revolutionize Your Workflow with SiVA.ai',
-        'Accelerate Innovation with SiVA.ai'
+        'Transform Your Enterprise with Prithvi AI',
+        'Revolutionize Your Workflow with Prithvi AI',
+        'Accelerate Innovation with Prithvi AI'
       ],
       typeSpeed: 50,
       backSpeed: 30,

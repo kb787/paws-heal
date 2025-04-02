@@ -298,7 +298,7 @@ def process_youtube_channel(channel_handle: str):
 
         # Load and create vector store
         documents = load_and_split_transcripts(TRANSCRIPTS_DIR)
-        create_vector_store(documents, "SIH", "transcripts", "transcripts")
+        create_vector_store(documents, "wildlife", "youtube", "youtube")
 
         return "YouTube processing completed successfully."
 

@@ -46,7 +46,7 @@ class Analytics:
     def __init__(self):
         db = DatabaseConnector("mongodb", Secrets.ATLAS_CONNECTION_STRING)
         self.client = db.client
-        self.db_name = "SIH"
+        self.db_name = "wildlife"
         self.collection_name = "analytics"
         self.total_tokens = 0
 

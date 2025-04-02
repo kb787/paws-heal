@@ -10,7 +10,7 @@ class QueryRequest(BaseModel):
     user_query: str
 
 
-db_name = "SIH"
+db_name = "wildlife"
 collection_name = "pdfs"
 
 

@@ -36,7 +36,7 @@ embed_model = AzureOpenAIEmbeddings(
     openai_api_key=os.getenv("AOAI_TE3S_KEY"),
 )
 MONGO_URI = os.getenv("ATLAS_CONNECTION_STRING")
-DB_NAME = "SIH"
+DB_NAME = "wildlife"
 COLLECTION_NAME = "pdfs"
 INDEX_NAME = "pdfs"
 

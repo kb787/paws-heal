@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const code = `// SiVA.ai Context-Aware Response System
+const code = `// Prithvi AI Context-Aware Response System
 class ContextAwareSystem {
   constructor() {
     this.ragEngine = new RAGEngine();
@@ -80,7 +80,7 @@ export default function DemoSection() {
     <section id="demo" className="py-20">
       <div className="container mx-auto px-6 max-w-4xl">
         <h2 className="text-4xl font-bold text-white text-center mb-16">
-          See SiVA.ai in Action
+          See Prithvi AI in Action
         </h2>
         <CodeTyping />
       </div>

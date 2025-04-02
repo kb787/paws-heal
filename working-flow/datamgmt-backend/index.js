@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3000;
 // MongoDB connection configuration
 const connectionString =
   process.env.MONGODB_URI ||
-  "mongodb+srv://dhruvpatel150204:internship123@cluster0.ec2du.mongodb.net/";
-const DATABASE_NAME = "SIH";
+  "mongodb+srv://dhruvpatel150204:Dhruv150204@cluster0.wbb6y.mongodb.net/";
+const DATABASE_NAME = "wildlife";
 
 // Middleware
 app.use(
@@ -128,7 +128,7 @@ app.get("/api/pdf-files", async (req, res) => {
   try {
     const db = await connectToDatabase();
     const pdfsCollection = db.collection("pdfs");
-    
+
     const pdfDocuments = await pdfsCollection.find({}).toArray();
     console.log(pdfDocuments);
     const pdfFiles = pdfDocuments.map((doc) => ({

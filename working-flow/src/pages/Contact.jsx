@@ -11,7 +11,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-gray-400 mb-6 hover:text-neon-purple transition duration-300">
-            Let’s discuss how Siva.AI can transform your enterprise operations
+            Let’s discuss how Prithvi AI can transform your enterprise operations
           </p>
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -83,7 +83,7 @@ const Contact = () => {
             <h2 className="text-lg font-bold mb-2 text-neon-purple hover:text-purple-500 transition duration-300">
               Email Us
             </h2>
-            <p className="text-gray-400">contact@siva.ai</p>
+            <p className="text-gray-400">contact@prithvi.ai</p>
           </div>
           <div className="p-4 bg-gray-800 rounded hover:bg-gray-700 transition duration-300">
             <h2 className="text-lg font-bold mb-2 text-neon-purple hover:text-purple-500 transition duration-300">

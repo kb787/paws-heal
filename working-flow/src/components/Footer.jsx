@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-neon-purple to-purple-400 bg-clip-text text-transparent">
-              SiVA.ai
+              Prithvi AI
             </h3>
             <p className="text-gray-400">
               Redefining enterprise interaction through advanced AI technology.
@@ -25,11 +25,11 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-xl mb-4">Contact</h4>
-            <p className="text-gray-400">Email: info@siva.ai</p>
+            <p className="text-gray-400">Email: info@prithvi.ai</p>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          © {currentYear} SiVA.ai. All rights reserved.
+          © {currentYear} Prithvi AI. All rights reserved.
         </div>
       </div>
     </footer>

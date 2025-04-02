@@ -21,7 +21,7 @@ function App() {
                 <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-gray-900 to-gray-800">
                   <div className="text-center px-4">
                     <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 text-transparent bg-clip-text sm:text-6xl md:text-7xl">
-                      Welcome to Siva.AI
+                      Welcome to Prithvi AI
                     </h1>
                     <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
                       Empowering organizations with intelligent, scalable solutions for IT, HR, and operational excellence.

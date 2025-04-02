@@ -113,7 +113,7 @@ class VectorStoreManager:
 
 # MongoDB connection details
 mongo_uri = ATLAS_CONNECTION_STRING
-db_name = "SIH"
+db_name = "wildlife"
 collection_name = "transcripts"
 index_name = "transcripts"
 

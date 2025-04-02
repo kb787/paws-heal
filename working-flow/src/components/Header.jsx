@@ -26,7 +26,7 @@ function Header() {
             to="/"
             className="text-2xl font-bold bg-gradient-to-r from-neon-purple to-purple-400 bg-clip-text text-transparent"
           >
-            SiVA.ai
+            Prithvi AI
           </Link>
 
           {/* Navigation links */}

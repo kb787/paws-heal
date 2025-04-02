@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const messages = [
   { type: 'bot', text: 'Hello! How can I assist you today?' },
-  { type: 'user', text: 'Can you tell me about SiVA.ai features?' },
-  { type: 'bot', text: 'SiVA.ai offers context-aware responses, predictive analytics, and intelligent workflow automation.' },
+  { type: 'user', text: 'Can you tell me about Prithvi AI features?' },
+  { type: 'bot', text: 'Prithvi AI offers context-aware responses, predictive analytics, and intelligent workflow automation.' },
   { type: 'user', text: 'How does the context-aware response work?' },
   { type: 'bot', text: 'We use advanced RAG and Graph-RAG technologies to analyze multiple data sources and provide relevant, contextual answers.' }
 ];

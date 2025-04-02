@@ -83,7 +83,7 @@ const ChatInterface = ({ onMessageSent }) => {
         {
           user_query: input.trim(),
           user_ip: userIp,
-          db_name: "SIH",
+          db_name: "wildlife",
           collection_name: "pdfs",
         },
         {
@@ -242,7 +242,7 @@ const ChatInterface = ({ onMessageSent }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyPress}
-            placeholder="Ask Siva.AI..."
+            placeholder="Ask Prithvi AI..."
             disabled={isLoading}
             className="w-full p-4 pl-12 pr-20 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-800 text-white"
           />

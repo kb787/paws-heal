@@ -23,5 +23,7 @@ class Secrets:
     ATLAS_CONNECTION_STRING = os.environ.get("ATLAS_CONNECTION_STRING")
     REDIS_CONNECTION_STRING = os.environ.get("REDIS_CONNECTION_STRING")
 
+    AZURE_AI_API_BASE = os.environ.get("AZURE_AI_API_BASE")
+    AZURE_AI_API_KEY = os.environ.get("AZURE_AI_API_KEY")
 
     FILE_UPLOAD_LIMIT = 200

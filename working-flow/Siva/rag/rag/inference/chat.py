@@ -31,11 +31,10 @@ from langchain.chains import create_retrieval_chain
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import LLMChain
 
-from langchain.chains import RetrievalQA
+
 from langchain.prompts import PromptTemplate
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.llms import OpenAI
-
 
 from Siva.rag.rag.analytics import Analytics
 from Siva.rag.rag.prompts import Prompts
@@ -60,61 +59,6 @@ class ChatService:
         self.store = {}
         self.analytics = Analytics()
         self.time_converter = TimeConverter()
-
-    # def _initialize_chat_store(self):
-    #     """
-    #     Initializes the chat store.
-
-    #     Returns
-    #     -------
-    #     SimpleChatStore
-    #         The initialized chat store.
-
-    #     Raises
-    #     ------
-    #     Exception
-    #         If there is an error initializing the chat store.
-    #     """
-    #     try:
-    #         chat_store = MongoChatStore(self.URI, "test_chat_store")
-    #         logger.info("Chat store initialized successfully")
-    #         return chat_store
-    #     except Exception as e:
-    #         logger.error(f"Error initializing chat store: {e}")
-    #         raise
-
-    def ask_litellm(
-        self,
-        query: str,
-        model: Union[LiteLLMModels, str] = LiteLLMModels.GEMMA_2_27B_IT,
-    ) -> dict:
-        """
-        Queries the LiteLLM model with a given query and model.
-
-        Parameters
-        ----------
-        query : str
-            The query to send to the LiteLLM model.
-        model : LiteLLMModel or str
-            The model to use for the query. Default is LiteLLMModel.GEMMA_2_27B_IT.
-
-        Returns
-        -------
-        dict
-            A dictionary containing the response, usage, and model information.
-        """
-        if isinstance(model, LiteLLMModels):
-            model = model.value
-
-        messages = [{"role": "user", "content": query}]
-        response = self.models.lite_llm.chat.completions.create(
-            model=model, messages=messages
-        )
-        return {
-            "response": response.choices[0].message.content,
-            "usage": response.usage,
-            "model": response.model,
-        }
 
     def get_sources(self, docs):
         sources = set()
@@ -181,13 +125,11 @@ class ChatService:
     def query_transcripts(self, user_query: str):
         try:
             vector_store_manager = VectorStoreManager(URI=self.URI)
-            vectorstore = vector_store_manager._get_vector_store("SIH", "transcripts")
+            vectorstore = vector_store_manager._get_vector_store("wildlife", "youtube")
 
             llm = self.models.azure_llm
             prompt = self.prompts.get_timestamp_prompt()
-            document_chain = create_stuff_documents_chain(
-                llm, self.prompts.get_timestamp_prompt()
-            )
+            document_chain = create_stuff_documents_chain(llm, prompt)
             retriever = vectorstore.as_retriever(
                 search_type="similarity",
                 search_kwargs={"k": 3},
@@ -318,18 +260,18 @@ class ChatService:
                 )
                 logger.info(f"Total tokens used: {cb.total_tokens}")
 
-            # transcript_response = {"yt_link": "None", "valid_timestamp": False}
-            # if query_type == "informative":
-                # transcript_response = self.query_transcripts(user_query)
-                # yt_link = transcript_response["yt_link"]
-                # if transcript_response["valid_timestamp"]:
-                #     response = (
-                #         f"{answer.content}\n\nYouTube video for reference: {yt_link}"
-                #     )
-                # else:
-                #     response = answer.content
-
-            response = answer.content
+            transcript_response = {"yt_link": "None", "valid_timestamp": False}
+            if query_type == "informative":
+                transcript_response = self.query_transcripts(user_query)
+                yt_link = transcript_response["yt_link"]
+                if transcript_response["valid_timestamp"]:
+                    response = (
+                        f"{answer.content}\n\nYouTube video for reference: {yt_link}"
+                    )
+                else:
+                    response = answer.content
+            else:
+                response = answer.content
 
             self.analytics.store_query_data(
                 user_query,

@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-black opacity-80 p-4 flex justify-between items-center z-50 ">
       <Link to = "/"      
       className="flex items-center space-x-4">
-        <h1 className="text-xl font-bold text-purple-500 dark:text-purple-400" >SiVA.ai</h1>
+        <h1 className="text-xl font-bold text-purple-500 dark:text-purple-400" >Prithvi AI</h1>
       </Link >
       <div className="flex items-center space-x-4">
         <button className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">

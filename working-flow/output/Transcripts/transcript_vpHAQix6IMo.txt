@@ -1,0 +1,346 @@
+0.66: [Music]
+4.24: hello skuts welcome to episode five of
+7.24: sko learnings today we will be learning
+10.36: about Barcode Scanner troubleshooting
+12.92: with Mr azimuddin Khan from best
+15.6: barcodes so let's begin hi aim G very
+20.24: good morning yeah good morning mam good
+22.56: morning good morning everyone how are
+23.96: you I am fine mam a f great great so uh
+28.599: uh all this konut we have our speaker
+30.96: for the day here with us uh he's Mr
+33.719: aimin Khan uh the tech lead at best
+37.32: barcodes and he is our guest people for
+40.0: the day he'll be taking you with the
+43.079: entire process of troubleshooting our
+45.399: printers or
+49.52: scann so over to you now sir we are all
+52.76: very excited for this training uh I
+55.6: really hope to uh have a great learning
+58.64: out of this thank you so
+61.199: okay thank you thank you madam hi
+63.519: everyone so this is aim and today I will
+67.56: introduce you about our decode product
+70.759: actually we are a manufacturer of decode
+74.88: decode brand printer and scanners
+88.92: so
+92.079: related all the technical related query
+95.36: and product specifications everything we
+98.32: will we will cover today so I think we
+102.64: should start with a uh so uh one second
+107.68: let me share my screen this is the our
+110.68: uh product record product we have
+113.399: categorized this in four category
+117.479: uh so it first one
+122.28: scan
+124.2: scan how many models are there in
+126.84: Scanners and how many models are there
+130.039: label printer and receip printer and
+132.76: same mobile printer so Char
+137.319: category one by one I will
+148.84: explain
+152.959: so let's start from
+155.48: scanner so we have we have total six
+158.76: model scanner if you see here I have
+162.28: categorized this wired Wireless and
+165.2: BT
+166.76: so model DC 51 this is the wi wi scanner
+172.519: and then DC
+174.08: 5112 this one W wide and
+177.56: wireless a wire wir
+182.12: TC 512 BT 512 BT this is the Wireless
+186.44: Plus BT scan so basically there is three
+190.04: Model 51 5112 and 5112 BT
+203.12: so this is the 1 Barcode Scanner and
+207.68: 5.21 same wire this is the 2D Barcode
+211.319: Scanner 1D and 2D means there is barcode
+215.0: type barcode symbology okay so this is
+218.519: the our barcod scanner so I will show
+222.159: you one by one if you can see this one
+225.28: so you will get a manual inside this and
+227.519: you will get a cable also in this and
+230.36: this is the our scanner so scanner a
+233.2: cable
+238.72: or I help you there is many uh Pro
+242.439: programmable barcode in the manual with
+244.48: the help of manual you can program the
+246.12: scanner according your requirement okay
+249.319: so
+251.439: scan other side will be connect in the
+254.439: host like PC mobile computer where do
+258.239: you want to take the
+260.12: data okay so and this one
+263.96: 5.21 means there is wi scanner do model
+267.04: and wi there is two model in the wi
+268.84: scanner one is 1D and two the second is
+271.4: 2D so this one 2D wi
+276.44: scanner manual and you will get a cable
+280.919: also or
+293.52: scanner there is different between scan
+297.84: engine I will explain later
+300.36: about
+303.479: SC so we have connected this the cable
+307.479: now scanner is ready to work we just
+310.68: need to connect the cable in the
+317.84: laptop will be a light on the
+328.639: scanner
+330.319: like
+335.12: this like this you can see in the
+350.08: video scan
+353.0: second 2D scanner 2D scanner can read 1D
+356.44: and 2D both barcod but 1D scanner only
+360.12: can scan One D Bar
+362.039: Code
+364.12: okay so this is the basic uh very simple
+367.68: to connect any Scanner with the
+369.88: system and if this is the Plug and Play
+372.4: device so now we will move on the wless
+376.08: scanner so here is two scanners one 5112
+380.28: and second one 5122 a 1 wiress and
+383.44: second is 2D Val up uh structure wise it
+388.12: will be same but there is a different
+391.12: between scan engine only there is a scan
+393.319: engine I will show you scan engine later
+396.56: okay so we will unbox one by one and
+400.039: we'll show
+401.599: you so this is the same manual there is
+404.639: many program bar code inside
+407.639: manual and here is you also get a cable
+411.08: because
+416.84: c c you can use also
+423.24: cable and here is the
+425.96: D so basically how to connect the dongle
+429.16: with the scanner
+432.24: I you can connect the dong through
+435.24: Scanner with the help of manual I will
+437.12: show
+438.28: you in video you can see this
+441.84: is normal
+446.36: USB no no
+448.199: no it only can work with
+451.199: scanner okay
+455.56: yeah basically this one 2.4g uh wiress
+459.12: USB
+466.479: adopter okay same like you will get a
+476.4: manual you will get also a cable in
+479.759: every scanner you will get a cable and a
+482.039: scanner and in Wireless and BT models
+484.36: you will get a extra USB adopter that's
+491.84: it okay now how to connect how to
+496.479: connect
+505.8: SC SC to connect Scanner with the
+510.759: okay you have to scan 2.4g
+514.88: barcode
+521.44: then connect the doal in the
+526.279: system andan
+536.68: 2.4
+538.44: yes
+540.519: now now see you can
+546.0: see
+549.04: data
+553.6: Sy this
+559.12: one you can also connect this
+562.68: one
+568.36: through
+570.04: it will be really
+572.92: great
+575.32: orar okay okay okay sure M
+580.04: okay just after it I will show you sure
+583.8: thank
+598.32: you
+601.16: so this is the
+614.68: same
+616.36: communication Wireless and BT there is
+619.44: only a difference
+625.6: communication so all the same uh cable
+629.48: manual and Barcode Scanner same like
+631.72: other scanner you can get it inside the
+657.8: Box device B connect same like that you
+661.32: can connect this one
+666.44: also apart from this handhold handheld
+671.24: scanner tblop
+673.76: scanners yeah table
+684.0: toop that's
+686.16: it same like wi scanner
+690.36: there is also video in the YouTube you
+692.36: can share this uh YouTube link in the
+694.88: group your group so that
+718.24: there
+735.959: if you is
+738.16: there
+748.16: okay
+750.519: okay now now now I
+753.56: will
+760.839: difference is the basic vertic line set
+764.04: of vertical line like you can see here
+767.959: set up vertical
+770.72: line and line this one the 1D
+778.12: barcode
+780.519: Square barod
+783.12: Bally
+794.36: sing Tye basically this one 2D
+808.12: barod
+838.04: 3993
+851.0: this one and this one
+853.92: barod okay okay
+858.12: soan what is the inside scanner now we
+861.24: come on technical part okay what is the
+864.72: inside scanner okay there is the trigger
+867.36: button okay and this one the outer
+870.04: structure and inside there a scan engine
+873.079: and Trigger board okay now if you open
+877.079: this one if we will open what we will
+880.0: get inside okay I will show you okay so
+884.519: we will get scan engine like this inside
+887.12: this one 1D scan engine 1D scan engine
+890.199: and this one 2D scan engine basically 2D
+893.48: scan engine is the image base scanner
+896.0: and is the laser base scanner so
+927.959: con
+933.319: okay
+957.92: suppose
+967.199: if any part got faulty you can replace
+969.92: okay now I will show you the what which
+973.44: Maximum issues what kind of issues we
+975.88: can face and what is the solution with
+979.079: that issue I will show you if scanner is
+982.0: not getting on why sometime what happens
+986.24: customer purchase the scann and he that
+989.48: scan is not getting
+1013.6: on power maybe there is any shortage in
+1016.44: the USB port and maybe USB
+1019.6: FY that one last last one
+1027.76: [Music]
+1029.679: is is not connected properly or there
+1033.079: issue USB port so we have to check that
+1036.64: that
+1047.84: point
+1057.799: and second scan not getting
+1071.919: on the battery status okay maybe the
+1075.919: battery is dead so we have to charge
+1077.919: that battery first
+1080.08: and after
+1088.84: thaty and third one scanner has laser
+1091.52: but cannot treat the
+1093.559: barcode
+1098.08: mean scanner is okay scan is getting
+1101.36: laser scan providing laser but cannot
+1103.799: read any barcode not able to read the
+1105.679: barcode so condition what we have to
+1109.32: do so maybe barcode damage
+1114.52: dbe there is any issue the that barcode
+1118.36: that's why it is not scanning and second
+1121.2: scanning distance is not
+1123.4: correct
+1125.0: barcode maybe the distance between barod
+1128.24: and the scanner may be different maybe
+1131.08: not compati in the uh different
+1134.64: differences between barcod and the uh
+1137.64: scanner so we have to maintain a proper
+1141.4: uh distance also suppose this is the our
+1144.44: scanner and this is the barcode okay
+1147.6: customer is complaining that barcode is
+1149.2: not scanning so when
+1152.24: when from here it can scan okay
+1156.76: but if we do like this from here so it
+1160.6: will not discan okay so we have to check
+1164.52: that what is basically happening there
+1167.799: how is customer use using that
+1175.0: one and fourth one
+1177.679: scanner is reading barcode but cannot
+1180.36: uploading
+1182.159: data barcod scan it is scanning okay but
+1187.52: in the system data is not
+1195.72: uploading we can check maybe our if we
+1198.96: are using Wireless scanner then maybe
+1201.48: our wireless USB receiver has not
+1205.0: aligned with the
+1218.4: scanner maybe c not connected
+1226.64: properly okay and the fifth one scanner
+1231.36: is uploading wrong bar wrong decoding
+1235.28: barode
+1238.4: uhod suppose we have 1 2 3 4 five inside
+1242.28: the barcode and while we scanning we are
+1244.919: getting data different data like 1 2 3 4
+1248.64: 5 uh here is 1 2 3 4 5 and we are
+1251.88: getting 10 11 12 like that so in that
+1256.28: condition maybe keyboard select
+1259.48: wrong means country code there is
+1265.28: many
+1279.64: maybe okay please
+1282.12: next laser appears and then goes out but
+1285.24: there is no data display in the input
+1287.559: box Wireless
+1296.44: coming and disappearing like laser come
+1298.72: and go like that like that is
+1300.88: happening so what may be
+1305.36: issue so there is many there is four
+1308.24: reason can be basically maybe USB
+1310.64: receiver has not plugged into the PCV
+1313.0: port and second one maybe Port this is
+1315.919: out of condition maybe Port had d
+1319.36: maybe USB receiver is not mat with the
+1321.279: scanner yes maybe there is different
+1323.72: receiver we are using with this scanner
+1325.88: maybe mismatch the barod USB receiver
+1329.679: and last one maybe scanner set to
+1331.4: storage mode or USB virtual comp so
+1333.72: there is also a mode scanning mode that
+1337.32: is uh real time scanning and storage
+1340.52: mode in storage mode you can store the
+1343.159: data inside the scanner and later we can
+1346.36: uh we can upload in the PC
+1349.36: so maybe that one is the different maybe
+1352.52: storage mode if this one is storage mode
+1354.64: then real time at the real time it
+1356.76: cannot upload the data three four reason
+1360.4: what is the solution solution if there
+1363.6: is issue with USP receiver you can
+1365.6: change the receiver you can get right
+1369.559: receiver
+1376.08: receiver receiver unplug
+1393.44: while conne scner with PC so USB device
+1396.44: not recognized yes suppose we have
+1399.12: connected this Cable in the scanner in
+1401.6: the
+1405.44: PCB device not recognized means USB
+1408.919: device is not compatible not recognized
+1411.12: like that so you can check the USB port
+1415.24: or maybe
+1437.44: cable
+1441.72: Maxim and last one
+1445.52: Trier and last one 1D barcode is reading
+1448.48: but 2D barcode is not reading okay this
+1451.36: is about 2D scanner suppose if we have
+1454.4: 2D scanner it is scanning ond barcode is
+1457.32: scanning but 2D barcode is not able to
+1460.0: scan 2D barcode okay so uh issue is that
+1465.48: maybe 2D barcode is not enabled in this
+1467.84: scan engine
+1469.24: so we have to enable the 2D barcode so
+1472.2: that it can read 2D barcode also in the
+1475.24: manual you will
+1477.2: get I'll show
+1479.36: you how to
+1482.72: enable Okay this is the
+1487.84: manual here is the wireless how to
+1490.399: connect wireless how to connect BT and
+1493.64: then how to how to check battery status
+1497.039: also you can get many programming
+1499.399: barcode in this manual
+1502.399: okay and
+1504.2: later you can enable barcode from this
+1508.32: also so here is the mini barcode if 2D
+1512.0: barcode is not able to read you can
+1514.399: enable from here enable 2D barcode yeah
+1517.12: enable any particular barcode you can
+1519.12: also disable any particular
+1521.159: barcode so this manual is going to help
+1524.88: you a lot uh many many program
+1528.799: programming configuration barcodes is
+1531.36: there
+1533.52: okay so that's it about
+1536.559: scanners uh okay thank you so much a aim
+1540.399: G for uh such detailed uh description
+1548.0: and
+1554.52: solution

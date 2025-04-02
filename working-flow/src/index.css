@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-purple: #b026ff;
+  --dark: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--dark);
+  color: white;
+}
+
+.cursor-effect {
+  pointer-events: none;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--neon-purple);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  z-index: 9999;
+}
+
+.spark {
+  pointer-events: none;
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-purple);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spark 1s linear forwards;
+  z-index: 9999;
+}
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20, 0, 23);
+}
+
+@keyframes spark {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+element.style {
+  color: black;
+}
+.animated-gradient {
+  background-image: linear-gradient(270deg, blue, purple);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.typing-animation::after {
+  content: ".";
+  animation: typingDots 1.5s infinite steps(1, end);
+}
+
+.typing-animation::before {
+  content: "Thinking";
+}
+
+@keyframes typingDots {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "....";
+  }
+  100% {
+    content: ".";
+  }
+}

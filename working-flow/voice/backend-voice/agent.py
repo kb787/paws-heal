@@ -11,9 +11,9 @@ from livekit.agents import (
     metrics,
 )
 from livekit.agents.pipeline import VoicePipelineAgent
+from services.openai import Openai
 from livekit.plugins import (
-    cartesia,
-    openai,
+
     deepgram,
     noise_cancellation,
     silero,
@@ -50,6 +50,8 @@ async def entrypoint(ctx: JobContext):
     # Other great providers exist like Cerebras, ElevenLabs, Groq, Play.ht, Rime, and more
     # Learn more and pick the best one for your app:
     # https://docs.livekit.io/agents/plugins
+
+    openai = Openai()
     agent = VoicePipelineAgent(
         vad=ctx.proc.userdata["vad"],
         stt=deepgram.STT(),

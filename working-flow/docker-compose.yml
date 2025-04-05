@@ -1,0 +1,195 @@
+version: '3.8'
+
+services:
+  # Base Python image
+  python-base:
+    build:
+      context: .
+      dockerfile: Dockerfile.python-base
+    image: working-flow-python-base
+    networks:
+      - app-network
+
+  # App service
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - LOG_LEVEL=INFO
+      - API_URL=http://app:8000
+    env_file:
+      - .env
+    depends_on:
+      - python-base
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Backend service
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+      - LOG_LEVEL=INFO
+      - API_URL=http://backend:8001
+    env_file:
+      - .env
+    depends_on:
+      - python-base
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Siva service
+  siva:
+    build:
+      context: .
+      dockerfile: Siva/Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - PORT=8002
+      - LOG_LEVEL=INFO
+      - API_URL=http://siva:8002
+    env_file:
+      - .env
+    depends_on:
+      - python-base
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Voice backend service
+  voice-backend:
+    build:
+      context: .
+      dockerfile: voice/backend-voice/Dockerfile
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+      - LOG_LEVEL=INFO
+      - MODEL_DIR=/app/voice-backend/models
+      - API_URL=http://voice-backend:8003
+      - LIVEKIT_URL=${LIVEKIT_URL}
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+      - LITELLM_BASE_URL=${LITELLM_BASE_URL}
+      - LITELLM_API_KEY=${LITELLM_API_KEY}
+      - DEEPGRAM_API_KEY=${DEEPGRAM_API_KEY}
+    volumes:
+      - voice-models:/app/voice-backend/models
+    env_file:
+      - voice/backend-voice/.env
+      - .env
+    depends_on:
+      - python-base
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2G
+
+  # Voice frontend service
+  voice-frontend:
+    build:
+      context: .
+      dockerfile: voice/frontend/Dockerfile
+    ports:
+      - "3005:3000"
+    environment:
+      - PORT=3000
+      - LIVEKIT_URL=${LIVEKIT_URL}
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+      - NEXT_PUBLIC_LIVEKIT_URL=${LIVEKIT_URL}
+    env_file:
+      - voice/frontend/.env
+    networks:
+      - app-network
+    depends_on:
+      - voice-backend
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+
+  # Main frontend service
+  frontend:
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - VITE_APP_API_URL=http://app:8000
+      - VITE_BACKEND_API_URL=http://backend:8001
+      - VITE_SIVA_API_URL=http://siva:8002
+    networks:
+      - app-network
+    depends_on:
+      app:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+      siva:
+        condition: service_healthy
+
+  # Data management backend service
+  datamgmt-backend:
+    build:
+      context: .
+      dockerfile: datamgmt-backend/Dockerfile
+    ports:
+      - "8004:8004"
+    environment:
+      - PORT=8004
+      - API_URL=http://datamgmt-backend:8004
+    env_file:
+      - .env
+    networks:
+      - app-network
+    depends_on:
+      app:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+      siva:
+        condition: service_healthy
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  voice-models:
+    driver: local 

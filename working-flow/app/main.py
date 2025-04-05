@@ -19,13 +19,20 @@ async def capture_user_ip(request: Request, call_next):
     return response
 
 
-# CORS settings for frontend communication
+# Add CORS middleware with proper configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://siva-ai-9ijl.onrender.com", "http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:3001",
+        "http://localhost:3000",
+        "http://frontend:3001",
+        "http://voice-frontend:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600
 )
 
 # Include routers
@@ -36,3 +43,12 @@ app.include_router(rag_router, prefix="/rag", tags=["RAG Chatbot"])
 @app.get("/")
 async def root():
     return {"message": "Unified API for Admin Panel and RAG Chatbot"}
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

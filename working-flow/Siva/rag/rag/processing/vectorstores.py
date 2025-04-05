@@ -8,7 +8,8 @@ from pymongo.operations import SearchIndexModel
 from llama_index.core.callbacks import TokenCountingHandler
 from llama_index.core import VectorStoreIndex, StorageContext
 # from llama_index.vector_stores.mongodb import MongoDBAtlasVectorSearch
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
+import logging
 
 class VectorStoreManager:
     """
@@ -39,13 +40,18 @@ class VectorStoreManager:
         """
         Initializes the VectorStoreManager with a MongoDB client.
         """
-        self.URI = URI
-        db = DatabaseConnector("mongodb", URI)
-        self.client = db.client
-        self.models = Models()
-        Settings.llm = self.models.azure_llm
-        Settings.embed_model = self.models.embed_model
-        os.environ["ALLOW_RESET"] = "TRUE"
+        try:
+            self.URI = URI
+            db = DatabaseConnector("mongodb", URI)
+            self.client = db.client
+            self.models = Models()
+            Settings.llm = self.models.azure_llm
+            Settings.embed_model = self.models.embed_model
+            os.environ["ALLOW_RESET"] = "TRUE"
+            logger.info("VectorStoreManager initialized successfully")
+        except Exception as e:
+            logger.error(f"Error initializing VectorStoreManager: {str(e)}")
+            raise
 
     @classmethod
     def _create_vector_store_index(self, name: str) -> SearchIndexModel:
@@ -79,10 +85,11 @@ class VectorStoreManager:
                 name=name,
                 type="vectorSearch",
             )
-            logger.info("Vector search index created successfully.")
+            logger.info(f"Vector search index '{name}' created successfully")
             return search_index_model
         except Exception as e:
-            logger.error(f"Error creating vector index: {e}")
+            logger.error(f"Error creating vector index: {str(e)}")
+            raise
 
     def create_vector_store(self, db_name: str, collection_name: str, documents: list) -> MongoDBAtlasVectorSearch:
         """
@@ -110,6 +117,7 @@ class VectorStoreManager:
             If there is an error creating the vector store.
         """
         if not documents:
+            logger.error("Cannot create vector store: documents list is empty")
             raise ValueError("The documents list cannot be empty.")
         
         try:
@@ -121,10 +129,10 @@ class VectorStoreManager:
                 collection=MONGODB_COLLECTION,
                 index_name=collection_name,
             )
-            logger.info("Vector store created successfully")
+            logger.info(f"Vector store created successfully in {db_name}.{collection_name}")
             return vector_search
         except Exception as e:
-            logger.error(f"Error creating vector store: {e}")
+            logger.error(f"Error creating vector store: {str(e)}")
             raise
 
     def add_to_vector_store(self, db_name: str, collection_name: str, documents: list):
@@ -153,6 +161,7 @@ class VectorStoreManager:
             If there is an error adding documents.
         """
         if not documents:
+            logger.error("Cannot add to vector store: documents list is empty")
             raise ValueError("The documents list cannot be empty.")
 
         try:
@@ -163,9 +172,9 @@ class VectorStoreManager:
                 collection=MONGODB_COLLECTION,
                 index_name=collection_name,
             )
-            logger.info("Documents added successfully")
+            logger.info(f"Documents added successfully to {db_name}.{collection_name}")
         except Exception as e:
-            logger.error(f"Error adding documents: {e}")
+            logger.error(f"Error adding documents: {str(e)}")
             raise
 
     def _get_vector_store(self, db_name: str, collection_name: str) -> MongoDBAtlasVectorSearch:
@@ -196,10 +205,10 @@ class VectorStoreManager:
                 self.models.embed_model,
                 index_name=collection_name,
             )
-            logger.info("Vector store retrieved successfully")
+            logger.info(f"Vector store retrieved successfully from {db_name}.{collection_name}")
             return vectorstore
         except Exception as e:
-            logger.error(f"Error retrieving vector store: {e}")
+            logger.error(f"Error retrieving vector store: {str(e)}")
             raise
 
     def delete_vector_store_collection(self, db_name: str, collection_name: str):
@@ -221,9 +230,9 @@ class VectorStoreManager:
         try:
             db = self.client[db_name]
             db.drop_collection(collection_name)
-            logger.info("Vector store deleted successfully")
+            logger.info(f"Vector store collection {db_name}.{collection_name} deleted successfully")
         except Exception as e:
-            logger.error(f"Error deleting vector store: {e}")
+            logger.error(f"Error deleting vector store collection: {str(e)}")
             raise
 
     def delete_document(self, db_name: str, collection_name: str, file_name: str):
@@ -249,9 +258,9 @@ class VectorStoreManager:
             condition = {'file_name': file_name}
             collection = db[collection_name]
             result = collection.delete_many(condition)
-            logger.info(f"{result.deleted_count} documents associated with {file_name} have been deleted.")
+            logger.info(f"{result.deleted_count} documents associated with {file_name} deleted from {db_name}.{collection_name}")
         except Exception as e:
-            logger.error(f"Error deleting document: {e}")
+            logger.error(f"Error deleting document: {str(e)}")
             raise
 
     def update_document(self, db_name: str, collection_name: str, file_name: str, document: list):
@@ -279,8 +288,8 @@ class VectorStoreManager:
             condition = {'file_name': file_name}
             collection = db[collection_name]
             collection.delete_many(condition)
-            self.add_to_vector_store(db_name, collection_name, collection_name, document)
-            logger.info(f"Document {file_name} has been updated.")
+            self.add_to_vector_store(db_name, collection_name, document)
+            logger.info(f"Document {file_name} updated successfully in {db_name}.{collection_name}")
         except Exception as e:
-            logger.error(f"Error updating document: {e}")
+            logger.error(f"Error updating document: {str(e)}")
             raise

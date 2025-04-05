@@ -1,5 +1,5 @@
 import logging
-
+import os
 from dotenv import load_dotenv
 from livekit.agents import (
     AutoSubscribe,
@@ -13,79 +13,112 @@ from livekit.agents import (
 from livekit.agents.pipeline import VoicePipelineAgent
 from services.openai import Openai
 from livekit.plugins import (
-
     deepgram,
-    noise_cancellation,
     silero,
-    turn_detector,
 )
+from health_server import start_health_server
 
-
-load_dotenv(dotenv_path=".env.local")
+# Load environment variables
+load_dotenv()
 logger = logging.getLogger("voice-agent")
-
+logger.setLevel(logging.DEBUG)  # Set to DEBUG for more verbose logging
 
 def prewarm(proc: JobProcess):
-    proc.userdata["vad"] = silero.VAD.load()
-
+    try:
+        logger.info("Starting VAD model loading...")
+        proc.userdata["vad"] = silero.VAD.load()
+        logger.info("VAD model loaded successfully")
+    except Exception as e:
+        logger.error(f"Error loading VAD model: {str(e)}")
+        raise
 
 async def entrypoint(ctx: JobContext):
-    initial_ctx = llm.ChatContext().append(
-        role="system",
-        text=(
-            "You are a voice assistant created by LiveKit. Your interface with users will be voice. "
-            "You should use short and concise responses, and avoiding usage of unpronouncable punctuation. "
-            "You were created as a demo to showcase the capabilities of LiveKit's agents framework."
-        ),
-    )
+    try:
+        logger.info("Initializing agent with system prompt...")
+        initial_ctx = llm.ChatContext().append(
+            role="system",
+            text=(
+                "You are a voice assistant created by LiveKit. Your interface with users will be voice. "
+                "You should use short and concise responses, and avoiding usage of unpronouncable punctuation. "
+                "You were created as a demo to showcase the capabilities of LiveKit's agents framework."
+            ),
+        )
 
-    logger.info(f"connecting to room {ctx.room.name}")
-    await ctx.connect(auto_subscribe=AutoSubscribe.AUDIO_ONLY)
+        logger.info(f"Connecting to room {ctx.room.name}")
+        await ctx.connect(auto_subscribe=AutoSubscribe.AUDIO_ONLY)
+        logger.info(f"Successfully connected to room {ctx.room.name}")
 
-    # Wait for the first participant to connect
-    participant = await ctx.wait_for_participant()
-    logger.info(f"starting voice assistant for participant {participant.identity}")
+        logger.info("Waiting for participant...")
+        participant = await ctx.wait_for_participant()
+        logger.info(f"Participant joined: {participant.identity}")
 
-    # This project is configured to use Deepgram STT, OpenAI LLM and Cartesia TTS plugins
-    # Other great providers exist like Cerebras, ElevenLabs, Groq, Play.ht, Rime, and more
-    # Learn more and pick the best one for your app:
-    # https://docs.livekit.io/agents/plugins
+        logger.info("Initializing OpenAI service...")
+        openai = Openai()
+        logger.info("OpenAI service initialized")
 
-    openai = Openai()
-    agent = VoicePipelineAgent(
-        vad=ctx.proc.userdata["vad"],
-        stt=deepgram.STT(),
-        llm=openai.LLM(model="gpt-4o-mini"),
-        tts=deepgram.TTS(),
-        # use LiveKit's transformer-based turn detector
-        turn_detector=turn_detector.EOUModel(),
-        # minimum delay for endpointing, used when turn detector believes the user is done with their turn
-        min_endpointing_delay=0.5,
-        # maximum delay for endpointing, used when turn detector does not believe the user is done with their turn
-        max_endpointing_delay=5.0,
-        # enable background voice & noise cancellation, powered by Krisp
-        # included at no additional cost with LiveKit Cloud
-        noise_cancellation=noise_cancellation.BVC(),
-        chat_ctx=initial_ctx,
-    )
+        logger.info("Creating voice pipeline agent...")
+        agent = VoicePipelineAgent(
+            vad=ctx.proc.userdata["vad"],
+            stt=deepgram.STT(),
+            llm=openai.llm,
+            tts=deepgram.TTS(),
+            min_endpointing_delay=0.5,
+            max_endpointing_delay=5.0,
+            chat_ctx=initial_ctx,
+        )
+        logger.info("Voice pipeline agent created")
 
-    usage_collector = metrics.UsageCollector()
+        usage_collector = metrics.UsageCollector()
 
-    @agent.on("metrics_collected")
-    def on_metrics_collected(agent_metrics: metrics.AgentMetrics):
-        metrics.log_metrics(agent_metrics)
-        usage_collector.collect(agent_metrics)
+        @agent.on("metrics_collected")
+        def on_metrics_collected(agent_metrics: metrics.AgentMetrics):
+            metrics.log_metrics(agent_metrics)
+            usage_collector.collect(agent_metrics)
 
-    agent.start(ctx.room, participant)
-
-    # The agent should be polite and greet the user when it joins :)
-    await agent.say("Hey, how can I help you today?", allow_interruptions=True)
-
+        logger.info("Starting agent...")
+        agent.start(ctx.room, participant)
+        logger.info("Agent started and ready")
+        
+        logger.info("Sending initial greeting...")
+        await agent.say("Hey, how can I help you today?", allow_interruptions=True)
+        logger.info("Initial greeting sent")
+    except Exception as e:
+        logger.error(f"Error in entrypoint: {str(e)}", exc_info=True)
+        raise
 
 if __name__ == "__main__":
-    cli.run_app(
-        WorkerOptions(
-            entrypoint_fnc=entrypoint,
-            prewarm_fnc=prewarm,
-        ),
+    # Configure logging
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
+    logger.info("Starting voice agent")
+    
+    # Start health check server
+    health_thread = start_health_server()
+    logger.info("Health check server started")
+    
+    # Print environment variables for debugging (masking secrets)
+    livekit_url = os.getenv("LIVEKIT_URL")
+    livekit_api_key = os.getenv("LIVEKIT_API_KEY")
+    deepgram_api_key = os.getenv("DEEPGRAM_API_KEY")
+    litellm_api_key = os.getenv("LITELLM_API_KEY")
+    
+    logger.info(f"LIVEKIT_URL: {livekit_url}")
+    logger.info(f"LIVEKIT_API_KEY: {livekit_api_key[:5]}..." if livekit_api_key else "LIVEKIT_API_KEY: Not set")
+    logger.info(f"DEEPGRAM_API_KEY: {deepgram_api_key[:5]}..." if deepgram_api_key else "DEEPGRAM_API_KEY: Not set")
+    logger.info(f"LITELLM_API_KEY: {litellm_api_key[:5]}..." if litellm_api_key else "LITELLM_API_KEY: Not set")
+    
+    try:
+        logger.info("Running agent with WorkerOptions...")
+        cli.run_app(
+            WorkerOptions(
+                entrypoint_fnc=entrypoint,
+                load_threshold=0.9,
+                prewarm_fnc=prewarm,
+                job_memory_warn_mb=2000,
+                initialize_process_timeout=120,
+            )
+        )
+    except Exception as e:
+        logger.error(f"Failed to start agent: {str(e)}", exc_info=True)

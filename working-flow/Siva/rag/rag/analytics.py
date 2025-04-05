@@ -15,7 +15,7 @@ from llama_index.core import (
 
 # from llama_index.core import ChatPromptTemplate
 # from llama_index.vector_stores.mongodb import MongoDBAtlasVectorSearch
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from llama_index.core.storage.chat_store import SimpleChatStore
 from llama_index.core.memory import ChatMemoryBuffer
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
@@ -44,11 +44,16 @@ from Siva.rag.rag.settings import logger
 
 class Analytics:
     def __init__(self):
-        db = DatabaseConnector("mongodb", Secrets.ATLAS_CONNECTION_STRING)
-        self.client = db.client
-        self.db_name = "wildlife"
-        self.collection_name = "analytics"
-        self.total_tokens = 0
+        try:
+            db = DatabaseConnector("mongodb", Secrets.ATLAS_CONNECTION_STRING)
+            self.client = db.client
+            self.db_name = "wildlife"
+            self.collection_name = "analytics"
+            self.total_tokens = 0
+            logger.info("Analytics initialized successfully")
+        except Exception as e:
+            logger.error(f"Error initializing Analytics: {str(e)}")
+            raise
 
     def store_query_data(
         self,
@@ -61,7 +66,7 @@ class Analytics:
     ):
         try:
             if isinstance(answer, AIMessage):
-                answer = answer.content  # or use a method to convert to dict if needed
+                answer = answer.content
 
             db = self.client[self.db_name]
             collection = db[self.collection_name]
@@ -76,11 +81,15 @@ class Analytics:
             }
 
             collection.insert_one(data)
-            logger.info("Query data stored successfully")
+            logger.info(f"Query data stored successfully for IP {user_ip}")
         except Exception as e:
-            logger.error(f"Error storing query data: {e}")
+            logger.error(f"Error storing query data: {str(e)}")
             raise
 
     def update_token_count(self, current_tokens: int):
-        self.total_tokens += current_tokens
-        logger.info(f"Total token count: {self.total_tokens}")
+        try:
+            self.total_tokens += current_tokens
+            logger.info(f"Total token count updated to: {self.total_tokens}")
+        except Exception as e:
+            logger.error(f"Error updating token count: {str(e)}")
+            raise

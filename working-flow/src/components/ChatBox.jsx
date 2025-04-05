@@ -1,54 +1,154 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
-const messages = [
-  { type: 'bot', text: 'Hello! How can I assist you today?' },
-  { type: 'user', text: 'Can you tell me about Prithvi AI features?' },
-  { type: 'bot', text: 'Prithvi AI offers context-aware responses, predictive analytics, and intelligent workflow automation.' },
-  { type: 'user', text: 'How does the context-aware response work?' },
-  { type: 'bot', text: 'We use advanced RAG and Graph-RAG technologies to analyze multiple data sources and provide relevant, contextual answers.' }
-];
+const ChatBox = () => {
+  const [messages, setMessages] = useState([]);
+  const [inputMessage, setInputMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const messagesEndRef = useRef(null);
 
-export default function ChatBox() {
-  const [visibleMessages, setVisibleMessages] = useState([]);
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
-    let timeoutIds = [];
+    scrollToBottom();
+  }, [messages]);
 
-    const startChatLoop = () => {
-      setVisibleMessages([]); // Clear messages to restart the chat
-      messages.forEach((msg, index) => {
-        const timeoutId = setTimeout(() => {
-          setVisibleMessages(prev => [...prev, msg]);
-        }, index * 2000); // Add messages with a delay
-        timeoutIds.push(timeoutId);
+  const getIpAddress = async () => {
+    try {
+      const response = await axios.get('https://api.ipify.org?format=json');
+      return response.data.ip;
+    } catch (error) {
+      console.error('Error getting IP address:', error);
+      return 'unknown';
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (!inputMessage.trim()) return;
+
+    const userMessage = { text: inputMessage, sender: 'user' };
+    setMessages(prev => [...prev, userMessage]);
+    setInputMessage('');
+    setLoading(true);
+
+    try {
+      const userIp = await getIpAddress();
+      console.log('User IP:', userIp);
+
+      const requestData = {
+        user_query: inputMessage,
+        db_name: "wildlife",
+        collection_name: "pdfs",
+        user_ip: userIp
+      };
+
+      console.log('Sending request to app backend:', {
+        url: `${import.meta.env.VITE_APP_API_URL}/rag/siva/query`,
+        data: requestData
       });
 
-      // Restart the loop after the last message
-      const loopTimeoutId = setTimeout(startChatLoop, messages.length * 2000 + 2000);
-      timeoutIds.push(loopTimeoutId);
-    };
+      // Try app backend first
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_API_URL}/rag/siva/query`,
+        requestData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          withCredentials: true
+        }
+      );
 
-    startChatLoop();
+      console.log('App backend response:', response.data);
 
-    // Cleanup timeouts on component unmount
-    return () => timeoutIds.forEach(id => clearTimeout(id));
-  }, []);
+      if (response.data && response.data.response) {
+        setMessages(prev => [...prev, { text: response.data.response, sender: 'bot' }]);
+      } else {
+        console.log('Falling back to Siva backend');
+        console.log('Sending request to Siva backend:', {
+          url: `${import.meta.env.VITE_SIVA_API_URL}/query`,
+          data: requestData
+        });
+
+        // Fallback to Siva backend
+        const sivaResponse = await axios.post(
+          `${import.meta.env.VITE_SIVA_API_URL}/query`,
+          requestData,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            withCredentials: true
+          }
+        );
+
+        console.log('Siva backend response:', sivaResponse.data);
+
+        if (sivaResponse.data && sivaResponse.data.response) {
+          setMessages(prev => [...prev, { text: sivaResponse.data.response, sender: 'bot' }]);
+        } else {
+          setMessages(prev => [...prev, { text: 'Sorry, I could not process your request.', sender: 'bot' }]);
+        }
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setMessages(prev => [...prev, { text: 'Sorry, I could not process your request.', sender: 'bot' }]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="bg-dark/90 rounded-lg p-4 w-full max-w-md h-[400px] overflow-y-auto absolute right-0 mr-6 top-1/4">
-      <div className="space-y-4">
-        {visibleMessages.map((msg, idx) => (
-          <div key={idx} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`max-w-[80%] p-3 rounded-lg ${
-              msg.type === 'user' 
-                ? 'bg-neon-purple text-white' 
-                : 'bg-gray-800 text-gray-200'
-            }`}>
-              {msg.text}
+    <div className="flex flex-col h-full">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+          >
+            <div
+              className={`max-w-[70%] rounded-lg p-3 ${
+                message.sender === 'user'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 text-gray-800'
+              }`}
+            >
+              {message.text}
             </div>
           </div>
         ))}
+        {loading && (
+          <div className="flex justify-start">
+            <div className="bg-gray-200 text-gray-800 rounded-lg p-3">
+              Thinking...
+            </div>
+          </div>
+        )}
+        <div ref={messagesEndRef} />
+      </div>
+      <div className="p-4 border-t">
+        <div className="flex space-x-2">
+          <input
+            type="text"
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
+            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+            placeholder="Type your message..."
+            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onClick={handleSendMessage}
+            disabled={loading}
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50"
+          >
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default ChatBox;

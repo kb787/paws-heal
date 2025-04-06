@@ -68,6 +68,7 @@ function App() {
             <Route path="/dashboard" element={<Content/>} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/chats" element={<ChatHistory />} />
             {/* Other routes */}
           </Routes>
         </main>

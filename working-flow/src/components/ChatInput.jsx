@@ -18,20 +18,18 @@ const ChatInterface = ({ onMessageSent }) => {
   const messagesEndRef = useRef(null);
   const startTimeRef = useRef(null);
   const [copyMessage, setCopyMessage] = useState(""); // To handle the copy message
-  const [userId,setUserId] = useState('') ;
+  const [userId, setUserId] = useState("");
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-  useEffect(
-     () => {
-         const storedUserId = localStorage.getItem("userId") ;
-         console.log(storedUserId,'Id from dtorage') ;
-         if(storedUserId){
-             setUserId(storedUserId) ;
-         }
-     }
-  )
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+    console.log(storedUserId, "Id from dtorage");
+    if (storedUserId) {
+      setUserId(storedUserId);
+    }
+  });
   useEffect(scrollToBottom, [messages]);
   const getIpAddress = async () => {
     try {
@@ -90,7 +88,7 @@ const ChatInterface = ({ onMessageSent }) => {
         " http://127.0.0.1:8000/rag/siva/query",
         {
           user_query: input.trim(),
-          id:userId,
+          userId: userId,
           user_ip: userIp,
           db_name: "wildlife",
           collection_name: "pdfs",

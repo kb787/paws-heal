@@ -14,11 +14,11 @@ const ChatHistory = () => {
         // Step 1: Get user ID from local storage
         const storedUserId = localStorage.getItem("userId");
         console.log(storedUserId, "Id from storage");
-  
+
         if (!storedUserId) return;
-  
+
         setUserId(storedUserId);
-  
+
         // Step 2: Fetch all documents
         const response = await fetch("http://localhost:3500/fetchAllChats", {
           method: "GET",
@@ -29,18 +29,25 @@ const ChatHistory = () => {
         const data = await response.json();
         console.log(data, "All documents");
         setAllDocuments(data);
-  
+
         // Step 3: Filter documents by user ID
-        const filtered = data.filter((doc) => doc.id === storedUserId);
-        setFilteredDocuments(filtered);
+        const filtered = data.filter((doc) => doc.userId === storedUserId);
+        console.log(filtered, "Filtered documents");
+        if(filtered.length > 0){
+          setFilteredDocuments(filtered);
+          console.log('Store filtered documents',filteredDocuments); 
+         }
+        else {
+          setFilteredDocuments([]) ;
+          console.log("No documents found for this user ID.");
+        } 
       } catch (error) {
         console.error("Error during initialization:", error);
       }
     };
-  
+
     initialize();
   }, []);
-  
 
   useEffect(() => {
     if (darkMode) {

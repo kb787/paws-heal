@@ -7,6 +7,7 @@ const path = require("path");
 const fs = require("fs");
 const dbConnection = require("./config/dbConnection");
 const authRouter = require("./routes/auth-routes");
+const chatRouter = require("./routes/chat-routes");
 
 // Load environment variables
 dotenv.config();
@@ -318,6 +319,7 @@ app.delete("/api/delete-resource/:id", async (req, res) => {
 // Global Error Handler Middleware
 app.use(errorHandler);
 app.use(authRouter);
+app.use(chatRouter);
 // Server Startup
 const startServer = () => {
   app.listen(PORT, () => {

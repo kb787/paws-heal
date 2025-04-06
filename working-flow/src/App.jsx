@@ -23,6 +23,8 @@ import KnowledgePage from "./pages/KnowledgePage";
 import DataManagementPage from "./pages/DatamanagemnentPage";
 import ParticlesBackground from "./components/ParticlesBackground";
 import Content from "./components/dashboard/Content";
+import LoginPage from "./components/auth/LoginPage";
+import SignUpPage from "./components/auth/SignUpPage";  
 
 function App() {
   return (
@@ -64,6 +66,9 @@ function App() {
               element={<DataManagementPage></DataManagementPage>}
             />
             <Route path="/dashboard" element={<Content/>} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            {/* Other routes */}
           </Routes>
         </main>
       </div>

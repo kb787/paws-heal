@@ -231,7 +231,7 @@ const DataTable = () => {
   }
 
   return (
-    <div className="space-y-4 p-4 ">
+    <div className="space-y-4 p-4 w-full">
       {/* Modal for Content Viewing */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -291,7 +291,7 @@ const DataTable = () => {
           name="type"
           value={newItem.type}
           onChange={handleInputChange}
-          className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
         >
           <option value="">Select Type</option>
           <option value="YouTube" >YouTube</option>
@@ -314,7 +314,8 @@ const DataTable = () => {
       </div>
 
       {/* Data Table */}
-      <table className="min-w-full text-black bg-white shadow-md rounded-lg overflow-hidden">
+      <div className = "w-[100%">
+      <table className="w-[100%] text-black bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-gray-100">
           <tr>
             <th className="px-4 py-2 text-left">Type</th>
@@ -399,6 +400,7 @@ const DataTable = () => {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* No items message */}
       {filteredData.length === 0 && (

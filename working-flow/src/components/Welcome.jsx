@@ -10,9 +10,8 @@ const Welcome = () => {
             Hello, Bhoomika
           </span>
         </h1>
-        <p className="text-2xl text-gray-700 dark:text-gray-400 mb-8 text-center">
-          How can I help your enterprise level query today? <br />
-          I can help you extract, summarize, create reports & more.
+        <p className="text-2xl text-gray-700 dark:text-gray-400 mb-8 text-center mx-[12%]">
+        Explore the world of wildlife with me! I can provide information on animal species, endangered wildlife data, and conservation efforts
         </p>
 
         <div className="flex justify-center w-full">

@@ -7,6 +7,8 @@ const ChatHistory = () => {
   const [allDocuments, setAllDocuments] = useState([]);
   const [userId, setUserId] = useState("");
   const [filteredDocuments, setFilteredDocuments] = useState([]);
+  const fullText = "Recent Activity";
+  const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
     const initialize = async () => {
@@ -33,14 +35,13 @@ const ChatHistory = () => {
         // Step 3: Filter documents by user ID
         const filtered = data.filter((doc) => doc.userId === storedUserId);
         console.log(filtered, "Filtered documents");
-        if(filtered.length > 0){
+        if (filtered.length > 0) {
           setFilteredDocuments(filtered);
-          console.log('Store filtered documents',filteredDocuments); 
-         }
-        else {
-          setFilteredDocuments([]) ;
+          console.log("Store filtered documents", filteredDocuments);
+        } else {
+          setFilteredDocuments([]);
           console.log("No documents found for this user ID.");
-        } 
+        }
       } catch (error) {
         console.error("Error during initialization:", error);
       }
@@ -84,6 +85,64 @@ const ChatHistory = () => {
     },
   ];
 
+  // useEffect(() => {
+  //   let currentIndex = 0;
+  //   const interval = setInterval(() => {
+  //     setDisplayedText((prev) => prev + fullText[currentIndex]);
+  //     currentIndex++;
+  //     if (currentIndex >= fullText.length) clearInterval(interval);
+  //   }, 100); // 100ms delay between each character
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // useEffect(() => {
+  //   let currentIndex = 0;
+  //   const interval = setInterval(() => {
+  //     setDisplayedText((prev) => prev + fullText[currentIndex]);
+  //     currentIndex++;
+
+  //     if (currentIndex >= fullText.length) {
+  //       clearInterval(interval);
+  //     }
+  //   }, 100); // 100ms delay per character
+
+  //   return () => clearInterval(interval); // cleanup
+  // }, []);
+
+  // useEffect(() => {
+  //   let currentIndex = 0;
+  //   const interval = setInterval(() => {
+  //     if (currentIndex < fullText.length) {
+  //       setDisplayedText((prev) => prev + fullText[currentIndex]);
+  //       currentIndex++;
+  //     } else {
+  //       clearInterval(interval);
+  //     }
+  //   }, 100);
+  
+  //   return () => clearInterval(interval);
+  // }, []);
+  
+
+  useEffect(() => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      // Add one character at a time
+      const nextChar = fullText.charAt(index);
+      setDisplayedText((prev) => prev + nextChar);
+      index++;
+
+      // Stop when done
+      if (index >= fullText.length) {
+        clearInterval(interval);
+      }
+    }, 100); // Delay per character
+
+    // Cleanup on unmount
+    return () => clearInterval(interval);
+  }, []);
   const groupByDate = (items) => {
     const groups = {
       Today: [],
@@ -108,35 +167,32 @@ const ChatHistory = () => {
   const groupedHistory = groupByDate(historyItems);
 
   return (
-    // <div className="max-w-4xl mx-auto mt-8 mb-32">
     <div className="flex w-[100%]">
       <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="flex flex-col w-[98%] min-h-screen p-[1%] ml-[1%]">
-        {Object.entries(groupedHistory).map(([date, items]) =>
-          items.length > 0 ? (
-            <div key={date} className="mb-8">
-              <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-4">
-                {date}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {items.map((item, index) => (
-                  <button
-                    key={index}
-                    onClick={() => console.log("Clicked:", item.question)}
-                    className="p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer text-left"
-                  >
-                    <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                      {item.category}
-                    </h3>
-                    <p className="mt-1 text-gray-900 dark:text-gray-100">
-                      {item.question}
-                    </p>
-                  </button>
-                ))}
+      <div className="flex flex-col w-[95%] min-h-screen p-[1%] ml-[6%] mt-[10%] ">
+        <div className="text-left text-[30px] text-white font-extrabold flex justify-start mt-[3%]">
+          {displayedText}
+        </div>
+        <div className="flex items-center justify-around gap-[5%] w-[75%] mt-[5%]">
+          {filteredDocuments.length > 0 ? (
+            filteredDocuments.map((item) => {
+              return (
+                <div
+                  key={item._id}
+                  className="border border-white rounded-[0.375rem] bg-[#302c54] p-[2%] w-[calc(35%-1rem)] h-[6rem] flex justify-center items-center"
+                >
+                  {item.user_query}
+                </div>
+              );
+            })
+          ) : (
+            <div className="w-full h-[10rem]">
+              <div className="text-left text-[18px] font-medium text-white ">
+                No chats to display
               </div>
             </div>
-          ) : null
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

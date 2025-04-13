@@ -59,18 +59,17 @@ const upload = multer({
   },
 });
 
-// MongoDB Connection Function
-// async function connectToDatabase() {
-//   try {
-//     const client = new MongoClient(connectionString);
-//     await client.connect();
-//     console.log("Connected to MongoDB successfully");
-//     return client.db(DATABASE_NAME);
-//   } catch (error) {
-//     console.error("MongoDB Connection Error:", error);
-//     throw error;
-//   }
-// }
+async function connectToDatabase() {
+  try {
+    const client = new MongoClient(connectionString);
+    await client.connect();
+    console.log("Connected to MongoDB successfully");
+    return client.db(DATABASE_NAME);
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error);
+    throw error;
+  }
+}
 
 // Centralized Error Handler
 const errorHandler = (err, req, res, next) => {

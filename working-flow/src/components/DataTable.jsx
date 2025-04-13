@@ -23,10 +23,10 @@ const DataTable = () => {
       try {
         setIsLoading(true);
         const pdfResponse = await axios.get(
-          "http://localhost:3000/api/pdf-files"
+          "http://localhost:3500/api/pdf-files"
         );
         const youtubeResponse = await axios.get(
-          "http://localhost:3000/api/youtube-links"
+          "http://localhost:3500/api/youtube-links"
         );
 
         // Create a Set to track unique content
@@ -129,7 +129,7 @@ const DataTable = () => {
       setError(null);
 
       // Call backend delete endpoint
-      await axios.delete(`http://localhost:3000/api/delete-resource/${id}`);
+      await axios.delete(`http://localhost:3500/api/delete-resource/${id}`);
 
       // Remove the item from local state
       setData(data.filter((item) => item.id !== id));

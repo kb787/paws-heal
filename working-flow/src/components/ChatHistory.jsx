@@ -1,14 +1,21 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import { useState, useEffect } from "react";
+import { Eye, Trash } from "lucide-react";
+import { Tooltip } from "reactstrap";
+import axios from "axios";
 
 const ChatHistory = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [allDocuments, setAllDocuments] = useState([]);
   const [userId, setUserId] = useState("");
   const [filteredDocuments, setFilteredDocuments] = useState([]);
-  const fullText = "Recent Activity";
+  const fullText = "Chat History";
   const [displayedText, setDisplayedText] = useState("");
+  const [eyeDisplay, setEyeDisplay] = useState(false);
+  const [trashDisplay, setTrashDisplay] = useState(false);
+  const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredIcon, setHoveredIcon] = useState(null);
 
   useEffect(() => {
     const initialize = async () => {
@@ -85,47 +92,9 @@ const ChatHistory = () => {
     },
   ];
 
-  // useEffect(() => {
-  //   let currentIndex = 0;
-  //   const interval = setInterval(() => {
-  //     setDisplayedText((prev) => prev + fullText[currentIndex]);
-  //     currentIndex++;
-  //     if (currentIndex >= fullText.length) clearInterval(interval);
-  //   }, 100); // 100ms delay between each character
-
-  //   return () => clearInterval(interval);
-  // }, []);
-
-  // useEffect(() => {
-  //   let currentIndex = 0;
-  //   const interval = setInterval(() => {
-  //     setDisplayedText((prev) => prev + fullText[currentIndex]);
-  //     currentIndex++;
-
-  //     if (currentIndex >= fullText.length) {
-  //       clearInterval(interval);
-  //     }
-  //   }, 100); // 100ms delay per character
-
-  //   return () => clearInterval(interval); // cleanup
-  // }, []);
-
-  // useEffect(() => {
-  //   let currentIndex = 0;
-  //   const interval = setInterval(() => {
-  //     if (currentIndex < fullText.length) {
-  //       setDisplayedText((prev) => prev + fullText[currentIndex]);
-  //       currentIndex++;
-  //     } else {
-  //       clearInterval(interval);
-  //     }
-  //   }, 100);
-  
-  //   return () => clearInterval(interval);
-  // }, []);
-  
-
   useEffect(() => {
+    // Reset displayed text at the beginning
+    setDisplayedText("");
     let index = 0;
 
     const interval = setInterval(() => {
@@ -142,7 +111,7 @@ const ChatHistory = () => {
 
     // Cleanup on unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [fullText]);
   const groupByDate = (items) => {
     const groups = {
       Today: [],
@@ -165,29 +134,105 @@ const ChatHistory = () => {
   };
 
   const groupedHistory = groupByDate(historyItems);
+  const handleDeleteChat = async () => {
+    try {
+      console.log(userId, "id-recieved");
+      await axios.delete(`http://localhost:3500/delete-chat/:${userId}`);
+      alert("Chat deleted successfully");
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+      alert("Server side error occured");
+    }
+  };
 
   return (
     <div className="flex w-[100%]">
       <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="flex flex-col w-[95%] min-h-screen p-[1%] ml-[6%] mt-[10%] ">
-        <div className="text-left text-[30px] text-white font-extrabold flex justify-start mt-[3%]">
+      <div className="flex flex-col w-[98%] min-h-screen p-4 ml-6 mt-10">
+        <div className="text-center text-3xl text-white font-extrabold flex justify-center mb-6">
           {displayedText}
         </div>
-        <div className="flex items-center justify-around gap-[5%] w-[75%] mt-[5%]">
+        <div className="w-full">
           {filteredDocuments.length > 0 ? (
-            filteredDocuments.map((item) => {
-              return (
+            <div className="flex flex-col gap-4 w-full overflow-y-auto h-[35rem]">
+              {allDocuments?.map((item) => (
                 <div
                   key={item._id}
-                  className="border border-white rounded-[0.375rem] bg-[#302c54] p-[2%] w-[calc(35%-1rem)] h-[6rem] flex justify-center items-center"
+                  className="border border-white rounded-md bg-[#302c54] p-2 w-full h-24 flex justify-start items-center"
                 >
-                  {item.user_query}
+                  <div className="flex flex-1 justify-between">
+                    <div>{item.user_query}</div>
+                    <div className="flex gap-4 mr-[2%]">
+                      {/* Eye Icon */}
+                      <div
+                        id={`eye-${item._id}`}
+                        onMouseEnter={() => {
+                          setHoveredId(item._id);
+                          setHoveredIcon("eye");
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredId(null);
+                          setHoveredIcon(null);
+                        }}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <Eye />
+                      </div>
+
+                      {/* Trash Icon */}
+                      <div
+                        id={`trash-${item._id}`}
+                        onMouseEnter={() => {
+                          setHoveredId(item._id);
+                          setHoveredIcon("trash");
+                        }}
+                        onMouseLeave={() => {
+                          setHoveredId(null);
+                          setHoveredIcon(null);
+                        }}
+                        style={{ cursor: "pointer" }}
+                        onClick={handleDeleteChat}
+                      >
+                        <Trash />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              );
-            })
+              ))}
+
+              {/* Tooltip for Eye */}
+              {hoveredIcon === "eye" && (
+                <Tooltip
+                  isOpen={true}
+                  target={`eye-${hoveredId}`}
+                  placement="top"
+                  className="text-[12px]"
+                >
+                  <div className="bg-dark text-white p-1 rounded-[8px]">
+                    {" "}
+                    View chat{" "}
+                  </div>
+                </Tooltip>
+              )}
+
+              {/* Tooltip for Trash */}
+              {hoveredIcon === "trash" && (
+                <Tooltip
+                  isOpen={true}
+                  target={`trash-${hoveredId}`}
+                  placement="top"
+                  className="text-[12px]"
+                >
+                  <div className="bg-dark text-white p-1 rounded-[8px]">
+                    Delete chat{" "}
+                  </div>
+                </Tooltip>
+              )}
+            </div>
           ) : (
-            <div className="w-full h-[10rem]">
-              <div className="text-left text-[18px] font-medium text-white ">
+            <div className="w-full">
+              <div className="text-left text-lg font-medium text-white">
                 No chats to display
               </div>
             </div>

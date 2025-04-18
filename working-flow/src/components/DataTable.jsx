@@ -403,11 +403,11 @@ const DataTable = () => {
       </div>
 
       {/* No items message */}
-      {filteredData.length === 0 && (
+      {/* {filteredData.length === 0 && (
         <div className="text-center text-gray-500 py-4">
           No items found. Add some YouTube links or PDF files!
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -70,21 +70,21 @@ const DisplayChatData = () => {
           {displayedText}
         </div>
       <div className="w-full flex justify-end mb-2">
-    <div className="flex flex-col  border border-white rounded-lg text-white p-2 min-w-12 max-w-fit justify-start text-left items-center bg-[#302c54]">
-        <div className = "text-left flex justify-start font-bolder text-[20px]">
-          Query
-        </div>
-        <div className = "font-light text-[16px] mt-[2%]">
-        {chatData.user_query}
-        </div> 
-    </div>
+      <div className="flex flex-col border border-white rounded-lg text-white p-2 min-w-12 max-w-fit justify-start text-left items-start bg-[#302c54]">
+  <div className="text-left font-bold text-[20px] w-full">
+    Query
   </div>
-  <div className="w-full flex justify-start mb-2">
-    <div className="flex flex-col border border-white rounded-lg text-white p-2 min-w-12 max-w-[40rem]  justify-center items-center ml-[2%] bg-[#302c54]">
-     <div className = "font-bolder text-[20px] text-left">
+  <div className="font-light text-[16px] mt-[1%]">
+    {chatData.user_query}
+  </div>
+</div>
+  </div>
+  <div className="w-full flex justify-start mb-2 mt-[0.5%]">
+    <div className="flex flex-col border border-white rounded-lg text-white p-2 min-w-12 justify-center items-center ml-[2%] bg-[#302c54]">
+     <div className = "font-bold text-[20px] text-left w-full">
         Response 
      </div> 
-     <div className = "font-light text-[16px] mt-[2%]">
+     <div className = "font-light text-[16px] mt-[1%]">
     {chatData.answer}
     </div> 
     </div>

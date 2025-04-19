@@ -187,7 +187,6 @@ const ChatHistory = () => {
                         onMouseLeave={() => {
                           setHoveredId(null);
                           setHoveredIcon(null);
-                          localStorage.clear("chatId")
                         }}
                         style={{ cursor: "pointer" }}
                         // onClick={handleChatNavigation(item._id)}

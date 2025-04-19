@@ -28,6 +28,16 @@ const Sidebar = ({ darkMode, toggleDarkMode }) => {
     { icon: Store, text: "Agent Store", path: "/store" },
     { icon: ChartNetwork, text: "Dashboard", path: "/dashboard" },
   ];
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("userId");
+
+    // 2. Optionally clear any other auth context/state
+    // e.g., setUser(null); setIsAuthenticated(false);
+
+    // 3. Redirect to login page
+    window.location.href = "/login"; // or use useNavigate if using react-router
+  };
 
   return (
     <div className="fixed left-0 top-16 h-[calc(100vh-4rem)] flex">
@@ -61,7 +71,10 @@ const Sidebar = ({ darkMode, toggleDarkMode }) => {
               <MessageCircle className="w-5 h-5 mr-3 text-gray-600 dark:text-gray-300" />
               <span className="text-gray-700 dark:text-gray-200">Feedback</span>
             </button>
-            <button className="w-full text-left p-3 rounded-lg mb-2 flex items-center hover:bg-gray-200 dark:hover:bg-gray-800">
+            <button
+              className="w-full text-left p-3 rounded-lg mb-2 flex items-center hover:bg-gray-200 dark:hover:bg-gray-800"
+              onClick={handleLogout}
+            >
               <LogOut className="w-5 h-5 mr-3 text-gray-600 dark:text-gray-300" />
               <span className="text-gray-700 dark:text-gray-200">Log Out</span>
             </button>

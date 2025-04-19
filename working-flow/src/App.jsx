@@ -24,7 +24,8 @@ import DataManagementPage from "./pages/DatamanagemnentPage";
 import ParticlesBackground from "./components/ParticlesBackground";
 import Content from "./components/dashboard/Content";
 import LoginPage from "./components/auth/LoginPage";
-import SignUpPage from "./components/auth/SignUpPage";  
+import SignUpPage from "./components/auth/SignUpPage";
+import DisplayChatData from "./components/context/DisplayChatData";
 
 function App() {
   return (
@@ -65,9 +66,11 @@ function App() {
               path="/datamanagement"
               element={<DataManagementPage></DataManagementPage>}
             />
-            <Route path="/dashboard" element={<Content/>} />
+            <Route path="/dashboard" element={<Content />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/chats" element={<ChatHistory />} />
+            <Route path="/chat-data" element={<DisplayChatData />} />
             {/* Other routes */}
           </Routes>
         </main>

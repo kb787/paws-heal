@@ -47,6 +47,7 @@ const LoginPage = () => {
       });
       console.log("Backend response", response);
       console.log("Response received:", response.data);
+      localStorage.setItem("userId", response.data.existingUser._id);
       localStorage.setItem("accessToken", response.data.token);
       if (response.data.success) {
         toast.success("Login successful!");

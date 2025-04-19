@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { Eye, Trash } from "lucide-react";
 import { Tooltip } from "reactstrap";
 import axios from "axios";
+import { useDocumentContext } from "./context/DocumentContext";
+import {useNavigate} from 'react-router-dom'
 
 const ChatHistory = () => {
+  const navigate = useNavigate() ;
   const [darkMode, setDarkMode] = useState(false);
   const [allDocuments, setAllDocuments] = useState([]);
   const [userId, setUserId] = useState("");
@@ -16,6 +19,7 @@ const ChatHistory = () => {
   const [trashDisplay, setTrashDisplay] = useState(false);
   const [hoveredId, setHoveredId] = useState(null);
   const [hoveredIcon, setHoveredIcon] = useState(null);
+  const { filteredDocumentsContext,setFilteredDocumentsContext } = useDocumentContext();
 
   useEffect(() => {
     const initialize = async () => {
@@ -44,7 +48,9 @@ const ChatHistory = () => {
         console.log(filtered, "Filtered documents");
         if (filtered.length > 0) {
           setFilteredDocuments(filtered);
-          console.log("Store filtered documents", filteredDocuments);
+          setFilteredDocumentsContext(filtered) ;
+          // console.log("Store filtered documents", filteredDocuments);
+          console.log("Context-Value",filteredDocumentsContext) ;
         } else {
           setFilteredDocuments([]);
           console.log("No documents found for this user ID.");
@@ -146,6 +152,11 @@ const ChatHistory = () => {
     }
   };
 
+  const handleChatNavigation = (chatId) => {
+       localStorage.setItem("chatId",chatId) ;
+      navigate("/chat-data")
+  }
+
   return (
     <div className="flex w-[100%]">
       <Sidebar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -156,7 +167,7 @@ const ChatHistory = () => {
         <div className="w-full">
           {filteredDocuments.length > 0 ? (
             <div className="flex flex-col gap-4 w-full overflow-y-auto h-[35rem]">
-              {allDocuments?.map((item) => (
+              {filteredDocuments?.map((item) => (
                 <div
                   key={item._id}
                   className="border border-white rounded-md bg-[#302c54] p-2 w-full h-24 flex justify-start items-center"
@@ -170,12 +181,16 @@ const ChatHistory = () => {
                         onMouseEnter={() => {
                           setHoveredId(item._id);
                           setHoveredIcon("eye");
+                          
                         }}
+                        onClick={() => handleChatNavigation(item._id)}
                         onMouseLeave={() => {
                           setHoveredId(null);
                           setHoveredIcon(null);
+                          localStorage.clear("chatId")
                         }}
                         style={{ cursor: "pointer" }}
+                        // onClick={handleChatNavigation(item._id)}
                       >
                         <Eye />
                       </div>

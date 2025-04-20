@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const AnimatedText = ({ text, className }) => {
-  const letters = Array.from(text);
+  const letters = Array.from(text); 
   
   const container = {
     hidden: { opacity: 0 },

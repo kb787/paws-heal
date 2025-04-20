@@ -45,13 +45,13 @@ const ChatBox = () => {
       };
 
       console.log('Sending request to app backend:', {
-        url: `${import.meta.env.VITE_APP_API_URL}/rag/siva/query`,
+        url: `http://localhost:5173}/rag/siva/query`,
         data: requestData
       });
 
       // Try app backend first
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_API_URL}/rag/siva/query`,
+        `http://localhost:5173}/rag/siva/query`,
         requestData,
         {
           headers: {

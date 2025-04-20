@@ -1,5 +1,5 @@
 const authModel = require("./../models/Auth");
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const secret_key = process.env.secret_key;

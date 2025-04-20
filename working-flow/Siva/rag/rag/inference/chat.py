@@ -171,36 +171,27 @@ class ChatService:
             logger.error(f"Error extracting timestamp: {e}")
             raise
 
-    def chat(
-        self,
-        user_query: str,
-        db_name: str,
-        collection_name: str,
-        user_ip: str,
-    ):
+    def chat(self, query: str, db_name: str, collection_name: str, user_ip: str = None, user_id: str = None):
         """
-        Processes a user query and returns a response.
-
+        Process a user query using RAG.
+        
         Parameters
         ----------
-        user_query : str
-            The query from the user.
-        user_ip : str
-            The IP address of the user.
+        query : str
+            The user's query.
         db_name : str
-            The name of the database.
+            The database name.
         collection_name : str
-            The name of the collection.
-
+            The collection name.
+        user_ip : str, optional
+            The user's IP address, by default None
+        user_id : str, optional
+            The user's ID, by default None
+            
         Returns
         -------
         dict
-            A dictionary containing the response and source documents.
-
-        Raises
-        ------
-        Exception
-            If there is an error processing the query.
+            The response containing the answer and additional information.
         """
         try:
             warnings.filterwarnings("ignore")
@@ -217,9 +208,9 @@ class ChatService:
             )
             context = itemgetter("question") | retriever | self.format_docs
             sources, pages = self.get_sources(
-                retriever.get_relevant_documents(user_query)
+                retriever.get_relevant_documents(query)
             )
-            query_type = self.classify_query(user_query)
+            query_type = self.classify_query(query)
 
             first_step = RunnablePassthrough.assign(context=context)
             chain = first_step | self.prompts.prompt | self.models.azure_llm
@@ -251,7 +242,7 @@ class ChatService:
 
             with get_openai_callback() as cb:
                 answer = with_message_history.invoke(
-                    {"question": user_query},
+                    {"question": query},
                     config={
                         "configurable": {
                             "user_id": "user_id",
@@ -263,28 +254,29 @@ class ChatService:
 
             transcript_response = {"yt_link": "None", "valid_timestamp": False}
             if query_type == "informative":
-                transcript_response = self.query_transcripts(user_query)
+                transcript_response = self.query_transcripts(query)
                 yt_link = transcript_response["yt_link"]
                 if transcript_response["valid_timestamp"]:
-                    response = (
+                    response_text = (
                         f"{answer.content}\n\nYouTube video for reference: {yt_link}"
                     )
                 else:
-                    response = answer.content
+                    response_text = answer.content
             else:
-                response = answer.content
+                response_text = answer.content
 
             self.analytics.store_query_data(
-                user_query,
-                response,
-                user_ip,
-                sources,
-                cb.prompt_tokens,
-                cb.completion_tokens,
+                user_query=query,
+                answer=response_text,
+                user_ip=user_ip,
+                source_doc=",".join(sources),
+                prompt_tokens=cb.prompt_tokens,
+                completion_tokens=cb.completion_tokens,
+                userId=user_id,
             )
             logger.info("Query processed successfully")
             return {
-                "response": response,
+                "response": response_text,
                 "response_metadata": answer.response_metadata,
                 "sources": sources,
                 "pages": pages,

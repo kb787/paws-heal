@@ -1,6 +1,6 @@
-import React from 'react';
-import TypedHeading from './TypedHeading';
-import ChatBox from './ChatBox';
+import React from "react";
+import TypedHeading from "./TypedHeading";
+import ChatBox from "./ChatBox";
 
 function Hero() {
   return (
@@ -10,7 +10,8 @@ function Hero() {
         <div className="flex-1">
           <TypedHeading />
           <p className="text-xl text-gray-300 mb-8">
-            Redefining how employees interact with enterprise resources through advanced AI technology.
+            Redefining how employees interact with enterprise resources through
+            advanced AI technology.
           </p>
         </div>
         <div className="flex-1">

@@ -31,6 +31,7 @@ logger = logging.getLogger(__name__)
 
 class QueryRequest(BaseModel):
     user_query: str
+    userId: str  # Add userId as a required field
 
 
 db_name = "wildlife"
@@ -42,14 +43,16 @@ async def query_endpoint(request: Request, query_request: QueryRequest):
     try:
         # Retrieve user_ip from middleware
         user_ip = request.state.user_ip
-        logger.info(f"Received query from IP {user_ip}: {query_request.user_query}")
+        logger.info(f"Received query from IP {user_ip}, userId: {query_request.userId}: {query_request.user_query}")
         
         response = chat_service.chat(
             query_request.user_query, 
             db_name, 
             collection_name, 
-            user_ip=user_ip
+            user_ip=user_ip,
+            user_id=query_request.userId  # Pass userId to the chat method
         )
+
         return response
     except Exception as e:
         logger.error(f"Error processing query: {str(e)}")

@@ -63,7 +63,19 @@ class Analytics:
         source_doc: str,
         prompt_tokens: int,
         completion_tokens: int,
+        userId: str,
     ):
+        """
+        Store query data in MongoDB Atlas.
+        Args:
+            user_query (str): The user's query.
+            answer (str): The model's answer.
+            user_ip (str): The user's IP address.
+            source_doc (str): The source document used for the answer.
+            prompt_tokens (int): The number of prompt tokens used.
+            completion_tokens (int): The number of completion tokens used.
+            userId (str): The user's ID.
+        """
         try:
             if isinstance(answer, AIMessage):
                 answer = answer.content
@@ -78,10 +90,11 @@ class Analytics:
                 "timestamp": datetime.datetime.utcnow(),
                 "prompt_tokens": prompt_tokens,
                 "completion_tokens": completion_tokens,
+                "userId": userId,
             }
 
             collection.insert_one(data)
-            logger.info(f"Query data stored successfully for IP {user_ip}")
+            logger.info(f"Query data stored successfully for IP {user_ip}, userId: {userId}")
         except Exception as e:
             logger.error(f"Error storing query data: {str(e)}")
             raise

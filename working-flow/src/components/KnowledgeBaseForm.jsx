@@ -62,7 +62,7 @@ const KnowledgeBaseForm = () => {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_APP_API_URL}/admin/youtube/process-channel/`,
+        `http://localhost:5173}/admin/youtube/process-channel/`,
         {
           method: "POST",
           headers: {
@@ -94,7 +94,7 @@ const KnowledgeBaseForm = () => {
     formData.append("pdf_file", file, file.name);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/admin/pdf/process-pdfs`, {
+      const response = await fetch(`http://localhost:5173}/admin/pdf/process-pdfs`, {
         method: "POST",
         body: formData,
         credentials: 'include'
@@ -137,8 +137,8 @@ const KnowledgeBaseForm = () => {
 
     const endpoint =
       urlMode === "single"
-        ? `${import.meta.env.VITE_APP_API_URL}/admin/scrapy/scrape`  // Scraping endpoint
-        : `${import.meta.env.VITE_APP_API_URL}/admin/scrapy/crawl`;  // Crawling endpoint
+        ? `http://localhost:5173}/admin/scrapy/scrape`  // Scraping endpoint
+        : `http://localhost:5173}/admin/scrapy/crawl`;  // Crawling endpoint
 
     try {
       setLoading(true);

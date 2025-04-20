@@ -55,10 +55,45 @@ const ChatInterface = ({ onMessageSent }) => {
   };
 
   const formatMessageContent = (content) => {
+    // Function to convert URLs to clickable links
+    const linkifyText = (text) => {
+      // Regular expression to match URLs (including YouTube links)
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      
+      if (!text.match(urlRegex)) {
+        return boldText(text);
+      }
+      
+      // Split by URLs and create array with links and text
+      const parts = text.split(urlRegex);
+      const matches = text.match(urlRegex) || [];
+      
+      return parts.map((part, i) => {
+        // If this part is a URL
+        if (matches.indexOf(part) !== -1) {
+          return (
+            <a 
+              key={i} 
+              href={part} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:underline"
+            >
+              {part}
+            </a>
+          );
+        }
+        // Otherwise it's regular text
+        return boldText(part);
+      });
+    };
+
     return content
       .split(/[\n\r]+/)
       .filter((line) => line.trim() !== "")
-      .map((line, index) => <div key={index}>{boldText(line.trim())}</div>);
+      .map((line, index) => (
+        <div key={index}>{linkifyText(line.trim())}</div>
+      ));
   };
 
   const handleSendMessage = async () => {

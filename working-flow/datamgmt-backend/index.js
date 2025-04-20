@@ -5,26 +5,27 @@ const dotenv = require("dotenv");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const dbConnection = require("./config/dbConnection");
+const authRouter = require("./routes/auth-routes");
+const chatRouter = require("./routes/chat-routes");
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.backend_port || 3000;
 
 // MongoDB connection configuration
-const connectionString =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://dhruvpatel150204:Dhruv150204@cluster0.wbb6y.mongodb.net/";
-const DATABASE_NAME = "wildlife";
+const connectionString = process.env.mongodb_connection_string;
+const DATABASE_NAME = process.env.mongodb_database_name;
 
 // Middleware
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "http://localhost:3001",
-      "http://localhost:3000",
+      process.env.frontend_url_one,
+      process.env.frontend_url_two,
+      process.env.frontend_url_three,
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -58,7 +59,6 @@ const upload = multer({
   },
 });
 
-// MongoDB Connection Function
 async function connectToDatabase() {
   try {
     const client = new MongoClient(connectionString);
@@ -317,7 +317,8 @@ app.delete("/api/delete-resource/:id", async (req, res) => {
 
 // Global Error Handler Middleware
 app.use(errorHandler);
-
+app.use(authRouter);
+app.use(chatRouter);
 // Server Startup
 const startServer = () => {
   app.listen(PORT, () => {
@@ -325,6 +326,7 @@ const startServer = () => {
     console.log(`📦 Environment: ${process.env.NODE_ENV || "development"}`);
   });
 };
+dbConnection();
 
 // Graceful Shutdown
 const gracefulShutdown = () => {

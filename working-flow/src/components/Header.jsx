@@ -32,7 +32,7 @@ function Header() {
           {/* Navigation links */}
           <div className="hidden md:flex space-x-8">
             <Link
-              to="/welcome" // Navigates to the Welcome page
+              to="/login" // Navigates to the Welcome page
               className="text-white hover:text-neon-purple transition-colors"
             >
               Get Started

@@ -23,12 +23,10 @@ const DataTable = () => {
       try {
         setIsLoading(true);
         const pdfResponse = await axios.get(
-          `${import.meta.env.VITE_APP_API_URL}/api/pdf-files`,
-          { withCredentials: true }
+          "http://localhost:3500/api/pdf-files"
         );
         const youtubeResponse = await axios.get(
-          `${import.meta.env.VITE_APP_API_URL}/api/youtube-links`,
-          { withCredentials: true }
+          "http://localhost:3500/api/youtube-links"
         );
 
         // Create a Set to track unique content
@@ -131,10 +129,7 @@ const DataTable = () => {
       setError(null);
 
       // Call backend delete endpoint
-      await axios.delete(
-        `${import.meta.env.VITE_APP_API_URL}/api/delete-resource/${id}`,
-        { withCredentials: true }
-      );
+      await axios.delete(`http://localhost:3500/api/delete-resource/${id}`);
 
       // Remove the item from local state
       setData(data.filter((item) => item.id !== id));
@@ -234,7 +229,7 @@ const DataTable = () => {
   }
 
   return (
-    <div className="space-y-4 p-4 ">
+    <div className="space-y-4 p-4 w-full">
       {/* Modal for Content Viewing */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -294,7 +289,7 @@ const DataTable = () => {
           name="type"
           value={newItem.type}
           onChange={handleInputChange}
-          className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
         >
           <option value="">Select Type</option>
           <option value="YouTube" >YouTube</option>
@@ -317,7 +312,8 @@ const DataTable = () => {
       </div>
 
       {/* Data Table */}
-      <table className="min-w-full text-black bg-white shadow-md rounded-lg overflow-hidden">
+      <div className = "w-[100%">
+      <table className="w-[100%] text-black bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-gray-100">
           <tr>
             <th className="px-4 py-2 text-left">Type</th>
@@ -402,13 +398,14 @@ const DataTable = () => {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* No items message */}
-      {filteredData.length === 0 && (
+      {/* {filteredData.length === 0 && (
         <div className="text-center text-gray-500 py-4">
           No items found. Add some YouTube links or PDF files!
         </div>
-      )}
+      )} */}
     </div>
   );
 };

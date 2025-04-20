@@ -23,10 +23,12 @@ const DataTable = () => {
       try {
         setIsLoading(true);
         const pdfResponse = await axios.get(
-          "http://localhost:3000/api/pdf-files"
+          `${import.meta.env.VITE_APP_API_URL}/api/pdf-files`,
+          { withCredentials: true }
         );
         const youtubeResponse = await axios.get(
-          "http://localhost:3000/api/youtube-links"
+          `${import.meta.env.VITE_APP_API_URL}/api/youtube-links`,
+          { withCredentials: true }
         );
 
         // Create a Set to track unique content
@@ -129,14 +131,15 @@ const DataTable = () => {
       setError(null);
 
       // Call backend delete endpoint
-      await axios.delete(`http://localhost:3000/api/delete-resource/${id}`);
+      await axios.delete(
+        `${import.meta.env.VITE_APP_API_URL}/api/delete-resource/${id}`,
+        { withCredentials: true }
+      );
 
       // Remove the item from local state
       setData(data.filter((item) => item.id !== id));
     } catch (error) {
       console.error("Error deleting resource:", error);
-
-      // Set error state to show in UI
       setError(error.response?.data?.message || "Failed to delete resource");
     }
   };

@@ -42,6 +42,7 @@ from pprint import pprint
 from typing import Union
 import random
 import numpy as np
+from pydantic import BaseModel
 
 
 class ChatService:

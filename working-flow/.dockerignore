@@ -1,0 +1,11 @@
+node_modules
+.next
+.git
+.gitignore
+.env.local
+.env.development
+.env.test
+.env.production
+README.md
+*.log
+.DS_Store 

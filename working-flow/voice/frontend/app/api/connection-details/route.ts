@@ -2,7 +2,6 @@ import {
   AccessToken,
   AccessTokenOptions,
   VideoGrant,
-  AgentDispatchClient,
 } from "livekit-server-sdk";
 import { NextResponse } from "next/server";
 
@@ -41,41 +40,23 @@ export async function POST(req: Request) {
       throw new Error("LIVEKIT_API_SECRET is not defined");
     }
 
-    // Generate participant token
-    const participantIdentity = `voice_assistant_user_${Math.floor(
-      Math.random() * 10_000
-    )}`;
-    const roomName = `voice_assistant_room_${Math.floor(
-      Math.random() * 10_000
-    )}`;
+    // Generate room name using agent ID and user ID for consistency
+    const roomName = `${agentId}-${userId}`;
+    
+    // Generate unique participant identity
+    const participantIdentity = `${userName}-${Math.floor(Math.random() * 10000)}`;
 
-    // Explicitly dispatch an agent to this room.
-    // Ensure that the agent's WorkerOptions are configured with agentName = "inbound-agent"
-    const agentName = "inbound-agent";
-    const agentDispatchClient = new AgentDispatchClient(
-      LIVEKIT_URL,
-      API_KEY,
-      API_SECRET
-    );
-    const dispatchOptions = { metadata: '{"customData": "example"}' };
+    console.log(`Creating token for room: ${roomName}, user: ${participantIdentity}`);
 
-    // Create explicit dispatch
-    const dispatch = await agentDispatchClient.createDispatch(
-      roomName,
-      agentName,
-      dispatchOptions
-    );
-    console.log("Dispatch created:", dispatch);
-
+    // Create participant token
     const participantToken = await createParticipantToken(
       {
         identity: participantIdentity,
         name: userName,
-        attributes: {
+        metadata: JSON.stringify({
           agentId: agentId,
           userId: userId,
-        },
-        metadata: "this-is-metadata",
+        }),
       },
       roomName
     );
@@ -87,15 +68,19 @@ export async function POST(req: Request) {
       participantToken: participantToken,
       participantName: participantIdentity,
     };
+    
+    console.log(`Generated connection details for room: ${roomName}`);
+    
     const headers = new Headers({
       "Cache-Control": "no-store",
     });
     return NextResponse.json(data, { headers });
   } catch (error) {
     if (error instanceof Error) {
-      console.error(error);
+      console.error("Error generating connection details:", error);
       return new NextResponse(error.message, { status: 500 });
     }
+    return new NextResponse("Unknown error", { status: 500 });
   }
 }
 

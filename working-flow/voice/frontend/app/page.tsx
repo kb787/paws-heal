@@ -22,38 +22,56 @@ export default function Home() {
     ConnectionDetails | undefined
   >(undefined);
   const [agentState, setAgentState] = useState<AgentState>("disconnected");
+  const [connectionError, setConnectionError] = useState<string | null>(null);
 
   const onConnectButtonClicked = useCallback(async () => {
-    // Generate room connection details, including:
-    //   - A random Room name
-    //   - A random Participant name
-    //   - An Access Token to permit the participant to join the room
-    //   - The URL of the LiveKit server to connect to
-    //
-    // In real-world application, you would likely allow the user to specify their
-    // own participant name, and possibly to choose from existing rooms to join.
+    try {
+      console.log("Getting microphone permissions...");
+      // Get microphone permissions
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      stream.getTracks().forEach(track => track.stop()); // Stop the stream after getting permission
+      
+      console.log("Microphone permissions granted");
+      console.log("Fetching connection details...");
 
-    const url = new URL(
-      process.env.NEXT_PUBLIC_CONN_DETAILS_ENDPOINT ??
-        "/api/connection-details",
-      window.location.origin
-    );
+      // Get connection details from frontend API route
+      const url = new URL(
+        "/api/connection-details", 
+        window.location.origin
+      );
+      console.log(`Fetching from: ${url.toString()}`);
+      
+      const response = await fetch(url.toString(), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userName: "User",
+          agentId: "inbound-agent",  // Must match the agent_id in your backend
+          userId: "user-" + Math.random().toString(36).substr(2, 9)
+        }),
+      });
 
-    // Customize these values for your own application
-    const userName = "Dr. John A. Zoidberg";
-    const agentId = "agentId_1234567";
-    const userId = "userId_123456789";
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Connection details error:', errorText);
+        throw new Error(`Failed to get connection details: ${errorText}`);
+      }
 
-    const response = await fetch(url.toString(), {
-      method: "POST",
-      headers: {
-        // Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userName, agentId, userId }),
-    });
-    const connectionDetailsData = await response.json();
-    updateConnectionDetails(connectionDetailsData);
+      const connectionDetailsData: ConnectionDetails = await response.json();
+      console.log("Connection details received:", {
+        serverUrl: connectionDetailsData.serverUrl,
+        roomName: connectionDetailsData.roomName,
+        participantName: connectionDetailsData.participantName
+      });
+
+      // The LiveKitRoom component will handle the connection using these details
+      updateConnectionDetails(connectionDetailsData);
+    } catch (error) {
+      console.error('Error getting connection details:', error);
+      setConnectionError(error instanceof Error ? error.message : String(error));
+    }
   }, []);
 
   return (
@@ -77,6 +95,7 @@ export default function Home() {
         <ControlBar
           onConnectButtonClicked={onConnectButtonClicked}
           agentState={agentState}
+          connectionError={connectionError}
         />
         <RoomAudioRenderer />
         <NoAgentNotification state={agentState} />
@@ -108,6 +127,7 @@ function SimpleVoiceAssistant(props: {
 function ControlBar(props: {
   onConnectButtonClicked: () => void;
   agentState: AgentState;
+  connectionError?: string | null;
 }) {
   /**
    * Use Krisp background noise reduction when available.
@@ -122,16 +142,26 @@ function ControlBar(props: {
     <div className="relative h-[100px]">
       <AnimatePresence>
         {props.agentState === "disconnected" && (
-          <motion.button
+          <motion.div
             initial={{ opacity: 0, top: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, top: "-10px" }}
             transition={{ duration: 1, ease: [0.09, 1.04, 0.245, 1.055] }}
-            className="uppercase absolute left-1/2 -translate-x-1/2 px-4 py-2 bg-white text-black rounded-md"
-            onClick={() => props.onConnectButtonClicked()}
+            className="flex flex-col items-center gap-4 absolute left-1/2 -translate-x-1/2"
           >
-            Start a conversation
-          </motion.button>
+            <motion.button
+              className="uppercase px-4 py-2 bg-white text-black rounded-md"
+              onClick={() => props.onConnectButtonClicked()}
+            >
+              Start a conversation
+            </motion.button>
+            
+            {props.connectionError && (
+              <p className="text-red-500 max-w-md text-center">
+                Error: {props.connectionError}
+              </p>
+            )}
+          </motion.div>
         )}
       </AnimatePresence>
       <AnimatePresence>

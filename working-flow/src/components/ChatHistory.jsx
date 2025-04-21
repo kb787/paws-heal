@@ -7,6 +7,7 @@ import axios from "axios";
 import { useDocumentContext } from "./context/DocumentContext";
 import {useNavigate} from 'react-router-dom'
 
+
 const ChatHistory = () => {
   const navigate = useNavigate() ;
   const [darkMode, setDarkMode] = useState(false);
@@ -20,6 +21,14 @@ const ChatHistory = () => {
   const [hoveredId, setHoveredId] = useState(null);
   const [hoveredIcon, setHoveredIcon] = useState(null);
   const { filteredDocumentsContext,setFilteredDocumentsContext } = useDocumentContext();
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setShowContent(true);
+    }, 2000);
+    return () => clearTimeout(delay);
+  }, []);
 
   useEffect(() => {
     const initialize = async () => {
@@ -169,9 +178,11 @@ const ChatHistory = () => {
             <div className="flex flex-col gap-4 w-full overflow-y-auto h-[35rem]">
               {filteredDocuments?.map((item) => (
                 <div
-                  key={item._id}
-                  className="border border-white rounded-md bg-[#302c54] p-2 w-full h-24 flex justify-start items-center"
-                >
+                key={item._id}
+                className={`border border-white rounded-md bg-[#302c54] p-2 w-full h-24 flex justify-start items-center transition-opacity duration-700 ${
+                  showContent ? "opacity-100" : "opacity-0"
+                }`}
+              >
                   <div className="flex flex-1 justify-between">
                     <div>{item.user_query}</div>
                     <div className="flex gap-4 mr-[2%]">

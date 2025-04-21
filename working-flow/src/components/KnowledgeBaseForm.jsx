@@ -62,14 +62,14 @@ const KnowledgeBaseForm = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5173}/admin/youtube/process-channel/`,
+        `http://localhost:8000/admin/youtube/process-channel/`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ channel_handle: formData.youtubeUrl }),
-          credentials: 'include'
+          credentials: "include",
         }
       );
 
@@ -94,11 +94,14 @@ const KnowledgeBaseForm = () => {
     formData.append("pdf_file", file, file.name);
 
     try {
-      const response = await fetch(`http://localhost:5173}/admin/pdf/process-pdfs`, {
-        method: "POST",
-        body: formData,
-        credentials: 'include'
-      });
+      const response = await fetch(
+        `http://localhost:8000/admin/pdf/process-pdfs`,
+        {
+          method: "POST",
+          body: formData,
+          credentials: "include",
+        }
+      );
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -137,8 +140,8 @@ const KnowledgeBaseForm = () => {
 
     const endpoint =
       urlMode === "single"
-        ? `http://localhost:5173}/admin/scrapy/scrape`  // Scraping endpoint
-        : `http://localhost:5173}/admin/scrapy/crawl`;  // Crawling endpoint
+        ? `http://localhost:8000/admin/scrapy/scrape` // Scraping endpoint
+        : `http://localhost:8000/admin/scrapy/crawl`; // Crawling endpoint
 
     try {
       setLoading(true);
@@ -148,7 +151,7 @@ const KnowledgeBaseForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(requestBody),
-        credentials: 'include'
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -242,9 +245,9 @@ const KnowledgeBaseForm = () => {
       placeholder: "Enter website URL",
     },
     // {
-    //   name: "excelFile", 
+    //   name: "excelFile",
     //   icon: FileSpreadsheet,
-    //   label: "Excel Upload", 
+    //   label: "Excel Upload",
     //   type: "file",
     //   placeholder: "Upload Excel File"
     // }
@@ -253,7 +256,7 @@ const KnowledgeBaseForm = () => {
   return (
     <div className="min-h-screen bg-customcolor text-white">
       <form onSubmit={(e) => e.preventDefault()} className="space-y-6 p-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-24">
           {inputFields.map((field) => (
             <div
               key={field.name}
@@ -282,33 +285,33 @@ const KnowledgeBaseForm = () => {
           <div className="bg-gray-1000 p-6 rounded-lg shadow-md mt-6 w-1/2  mx-auto ">
             {activeInput === "youtubeUrl" && (
               <div className="flex justify-center w-full">
-              <div className="w-1/2 ">
-                <div> 
-                  <label 
-                    htmlFor="youtubeUrl" 
-                    className="block text-sm font-medium text-gray-300 mb-2" 
-                  > 
-                    YouTube URL 
-                  </label> 
-                  <input 
-                    type="url" 
-                    id="youtubeUrl" 
-                    name="youtubeUrl" 
-                    value={formData.youtubeUrl} 
-                    onChange={handleInputChange} 
-                    placeholder="Enter YouTube URL" 
-                    className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B026FF] text-white" 
-                  /> 
-                  <button 
-                    type="button" 
-                    onClick={handleYouTubeSubmit} 
-                    className="bg-[#B026FF] text-white py-2 px-6 rounded-lg shadow-md hover:bg-purple-800  transition duration-300 mt-4" 
-                  > 
-                    Submit 
-                  </button> 
+                <div className="w-1/2 ">
+                  <div>
+                    <label
+                      htmlFor="youtubeUrl"
+                      className="block text-sm font-medium text-gray-300 mb-2"
+                    >
+                      YouTube URL
+                    </label>
+                    <input
+                      type="url"
+                      id="youtubeUrl"
+                      name="youtubeUrl"
+                      value={formData.youtubeUrl}
+                      onChange={handleInputChange}
+                      placeholder="Enter YouTube URL"
+                      className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B026FF] text-white"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleYouTubeSubmit}
+                      className="bg-[#B026FF] text-white py-2 px-6 rounded-lg shadow-md hover:bg-purple-800  transition duration-300 mt-4"
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
             )}
 
             {activeInput === "pdfFile" && (
@@ -477,7 +480,6 @@ const KnowledgeBaseForm = () => {
         </AnimatedContainer>
       </form>
     </div>
-    
   );
 };
 

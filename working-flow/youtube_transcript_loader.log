@@ -541,3 +541,104 @@
 2025-04-21 02:06:17,313 - Siva.rag.rag.settings - INFO - YouTube Link with Timestamp: https://www.youtube.com/watch?v=3-HkjfbcbM4&t=39
 2025-04-21 02:06:17,331 - Siva.rag.rag.settings - INFO - Query data stored successfully for IP 127.0.0.1, userId: 68053f1b45474cc9ccbeb2cf
 2025-04-21 02:06:17,331 - Siva.rag.rag.settings - INFO - Query processed successfully
+2025-04-21 03:36:13,718 - Siva.rag.app - INFO - Received query from IP 127.0.0.1, userId: 68053f1b45474cc9ccbeb2cf: Give me info about Lion
+2025-04-21 03:36:14,045 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 03:36:15,078 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 03:36:15,589 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 03:36:15,601 - Siva.rag.rag.settings - INFO - VectorStoreManager initialized successfully
+2025-04-21 03:36:15,727 - Siva.rag.rag.settings - INFO - Vector store retrieved successfully from wildlife.pdfs
+2025-04-21 03:36:16,824 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 03:36:17,431 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 03:36:19,046 - httpx - INFO - HTTP Request: POST https://aoai-triton-south-india.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview "HTTP/1.1 200 OK"
+2025-04-21 03:36:19,066 - Siva.rag.rag.settings - INFO - Total tokens used: 1330
+2025-04-21 03:36:19,324 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 03:36:20,499 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 03:36:21,917 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 03:36:21,919 - Siva.rag.rag.settings - INFO - VectorStoreManager initialized successfully
+2025-04-21 03:36:22,128 - Siva.rag.rag.settings - INFO - Vector store retrieved successfully from wildlife.youtube
+2025-04-21 03:36:23,039 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 03:36:23,934 - httpx - INFO - HTTP Request: POST https://aoai-triton-south-india.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview "HTTP/1.1 200 OK"
+2025-04-21 03:36:23,942 - Siva.rag.rag.settings - INFO - YouTube Link with Timestamp: https://www.youtube.com/watch?v=LH6h308oeJQ&t=2701
+2025-04-21 03:36:24,168 - Siva.rag.rag.settings - INFO - Query data stored successfully for IP 127.0.0.1, userId: 68053f1b45474cc9ccbeb2cf
+2025-04-21 03:36:24,168 - Siva.rag.rag.settings - INFO - Query processed successfully
+2025-04-21 11:25:15,649 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:25:16,536 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:25:19,153 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:25:19,153 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:25:47,428 - Siva.rag.app - INFO - Received query from IP 127.0.0.1, userId: 68053f1b45474cc9ccbeb2cf: Hi
+2025-04-21 11:25:47,695 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:25:48,324 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:25:49,028 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:25:49,029 - Siva.rag.rag.settings - INFO - VectorStoreManager initialized successfully
+2025-04-21 11:25:49,157 - Siva.rag.rag.settings - INFO - Vector store retrieved successfully from wildlife.pdfs
+2025-04-21 11:25:50,755 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:25:51,873 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:25:53,319 - httpx - INFO - HTTP Request: POST https://aoai-triton-south-india.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview "HTTP/1.1 200 OK"
+2025-04-21 11:25:53,342 - Siva.rag.rag.settings - INFO - Total tokens used: 1135
+2025-04-21 11:25:53,756 - Siva.rag.rag.settings - INFO - Query data stored successfully for IP 127.0.0.1, userId: 68053f1b45474cc9ccbeb2cf
+2025-04-21 11:25:53,756 - Siva.rag.rag.settings - INFO - Query processed successfully
+2025-04-21 11:27:03,463 - Siva.rag.app - INFO - Received query from IP 127.0.0.1, userId: 67f271c9855876150652aa37: Give me info about Vipers
+2025-04-21 11:27:03,743 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:27:05,832 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:27:07,594 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:27:07,595 - Siva.rag.rag.settings - INFO - VectorStoreManager initialized successfully
+2025-04-21 11:27:07,824 - Siva.rag.rag.settings - INFO - Vector store retrieved successfully from wildlife.pdfs
+2025-04-21 11:27:09,359 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:27:10,433 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:27:11,996 - httpx - INFO - HTTP Request: POST https://aoai-triton-south-india.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview "HTTP/1.1 200 OK"
+2025-04-21 11:27:12,001 - Siva.rag.rag.settings - INFO - Total tokens used: 1148
+2025-04-21 11:27:12,231 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:27:13,932 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:27:16,029 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:27:16,031 - Siva.rag.rag.settings - INFO - VectorStoreManager initialized successfully
+2025-04-21 11:27:16,291 - Siva.rag.rag.settings - INFO - Vector store retrieved successfully from wildlife.youtube
+2025-04-21 11:27:17,685 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:27:19,102 - httpx - INFO - HTTP Request: POST https://aoai-triton-south-india.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview "HTTP/1.1 200 OK"
+2025-04-21 11:27:19,107 - Siva.rag.rag.settings - INFO - YouTube Link with Timestamp: https://www.youtube.com/watch?v=3-HkjfbcbM4&t=505
+2025-04-21 11:27:19,135 - Siva.rag.rag.settings - INFO - Query data stored successfully for IP 127.0.0.1, userId: 67f271c9855876150652aa37
+2025-04-21 11:27:19,135 - Siva.rag.rag.settings - INFO - Query processed successfully
+2025-04-21 11:30:27,255 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:30:27,785 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:30:29,298 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:30:29,298 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:33:50,938 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:33:51,784 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:33:53,671 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:33:53,671 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:34:10,681 - backend.app.services.scrapy_service - INFO - Using NLTK data paths: ['C:\\Users\\DHRUV PATEL/nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\share\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\lib\\nltk_data', 'C:\\Users\\DHRUV PATEL\\AppData\\Roaming\\nltk_data', 'C:\\nltk_data', 'D:\\nltk_data', 'E:\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\Lib\\site-packages\\llama_index\\core\\_static/nltk_cache', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data']
+2025-04-21 11:34:10,685 - backend.app.services.scrapy_service - ERROR - Error processing Markdown files: unstructured package not found, please install it with `pip install unstructured`
+2025-04-21 11:34:10,685 - backend.app.routers.scrapy_router - ERROR - Scraping failed: unstructured package not found, please install it with `pip install unstructured`
+2025-04-21 11:36:10,002 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:36:10,844 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:36:12,127 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:36:12,127 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:36:38,019 - backend.app.services.scrapy_service - INFO - Using NLTK data paths: ['C:\\Users\\DHRUV PATEL/nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\share\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\lib\\nltk_data', 'C:\\Users\\DHRUV PATEL\\AppData\\Roaming\\nltk_data', 'C:\\nltk_data', 'D:\\nltk_data', 'E:\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\Lib\\site-packages\\llama_index\\core\\_static/nltk_cache', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data']
+2025-04-21 11:36:38,190 - backend.app.services.scrapy_service - ERROR - Error processing Markdown files: No module named 'markdown'
+2025-04-21 11:36:38,192 - backend.app.routers.scrapy_router - ERROR - Scraping failed: No module named 'markdown'
+2025-04-21 11:37:37,614 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:37:38,264 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:37:39,516 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:37:39,516 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:37:53,885 - backend.app.services.scrapy_service - INFO - Using NLTK data paths: ['C:\\Users\\DHRUV PATEL/nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\share\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\lib\\nltk_data', 'C:\\Users\\DHRUV PATEL\\AppData\\Roaming\\nltk_data', 'C:\\nltk_data', 'D:\\nltk_data', 'E:\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\Lib\\site-packages\\llama_index\\core\\_static/nltk_cache', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data']
+2025-04-21 11:38:00,514 - httpx - INFO - HTTP Request: POST https://aas-eastus2-hub386797580333.openai.azure.com/openai/deployments/text-embedding-3-small/embeddings?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2025-04-21 11:38:02,729 - backend.app.services.scrapy_service - INFO - Successfully added 11 documents to the vector store.
+2025-04-21 11:38:02,731 - backend.app.services.scrapy_service - INFO - Deleted processed file: output/Docs\md\www.sarvam.ai.md
+2025-04-21 11:38:08,616 - backend.app.services.scrapy_service - INFO - Using NLTK data paths: ['C:\\Users\\DHRUV PATEL/nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\share\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\lib\\nltk_data', 'C:\\Users\\DHRUV PATEL\\AppData\\Roaming\\nltk_data', 'C:\\nltk_data', 'D:\\nltk_data', 'E:\\nltk_data', 'C:\\Users\\DHRUV PATEL\\.conda\\envs\\MajorProject\\Lib\\site-packages\\llama_index\\core\\_static/nltk_cache', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data', 'C:\\Users\\DHRUV PATEL\\Desktop\\Major_Project\\paws-heal\\working-flow\\nltk_data']
+2025-04-21 11:38:49,822 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-04-21 11:38:56,515 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: o4VXFQFvmkA
+2025-04-21 11:38:57,552 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: q_AAAscbcbs
+2025-04-21 11:38:58,407 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: wo1e5iMEjbU
+2025-04-21 11:38:59,334 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: XokGaRj2T14
+2025-04-21 11:39:00,509 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: 1qXro6J8rtk
+2025-04-21 11:39:01,773 - backend.app.services.youtube_service - ERROR - Channel processing failed: 'FetchedTranscriptSnippet' object is not subscriptable
+2025-04-21 11:43:21,122 - Siva.rag.rag.settings - INFO - Azure gpt-4o initialized
+2025-04-21 11:43:21,752 - Siva.rag.rag.settings - INFO - Azure text-embedding-3-small initialized
+2025-04-21 11:43:23,133 - Siva.rag.rag.settings - INFO - Connected to MongoDB
+2025-04-21 11:43:23,133 - Siva.rag.rag.settings - INFO - Analytics initialized successfully
+2025-04-21 11:43:37,972 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2025-04-21 11:43:45,015 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: o4VXFQFvmkA
+2025-04-21 11:43:46,049 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: q_AAAscbcbs
+2025-04-21 11:43:47,191 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: wo1e5iMEjbU
+2025-04-21 11:43:48,026 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: XokGaRj2T14
+2025-04-21 11:43:48,960 - backend.app.services.youtube_service - WARNING - Transcripts disabled for video: 1qXro6J8rtk
+2025-04-21 11:43:50,277 - backend.app.services.youtube_service - ERROR - Channel processing failed: 'FetchedTranscriptSnippet' object is not subscriptable

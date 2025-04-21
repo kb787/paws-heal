@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
+import React, { useEffect, useRef } from "react";
+import Typed from "typed.js";
 
 export default function TypedHeading() {
   const el = useRef(null);
@@ -7,14 +7,14 @@ export default function TypedHeading() {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        'Transform Your Enterprise with Prithvi AI',
-        'Revolutionize Your Workflow with Prithvi AI',
-        'Accelerate Innovation with Prithvi AI'
+        "Transform Your Enterprise with Prithvi AI",
+        "Revolutionize Your Workflow with Prithvi AI",
+        "Accelerate Innovation with Prithvi AI",
       ],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true,
-      backDelay: 2000
+      backDelay: 2000,
     });
 
     return () => typed.destroy();
